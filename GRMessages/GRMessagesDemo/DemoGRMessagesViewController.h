@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DemoGRMessagesViewController.h
 //  GRMessages
 //
 //  Created by chengbin on 15/12/30.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface DemoGRMessagesViewController : UIViewController
 
 @end
-

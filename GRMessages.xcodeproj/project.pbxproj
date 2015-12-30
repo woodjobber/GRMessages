@@ -11,7 +11,7 @@
 		7C2538B81C3370CE00C69A89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C2538B71C3370CE00C69A89 /* Assets.xcassets */; };
 		7C2538BB1C3370CE00C69A89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2538B91C3370CE00C69A89 /* LaunchScreen.storyboard */; };
 		7C2538DA1C33797600C69A89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2538D11C33797600C69A89 /* AppDelegate.m */; };
-		7C2538DB1C33797600C69A89 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2538D31C33797600C69A89 /* ViewController.m */; };
+		7C2538E11C33825600C69A89 /* DemoGRMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2538E01C33825600C69A89 /* DemoGRMessagesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,8 +22,9 @@
 		7C2538BC1C3370CE00C69A89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C2538D01C33797600C69A89 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7C2538D11C33797600C69A89 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7C2538D21C33797600C69A89 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7C2538D31C33797600C69A89 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7C2538DF1C33825600C69A89 /* DemoGRMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoGRMessagesViewController.h; sourceTree = "<group>"; };
+		7C2538E01C33825600C69A89 /* DemoGRMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoGRMessagesViewController.m; sourceTree = "<group>"; };
+		7C2538E21C3382E500C69A89 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +93,7 @@
 		7C2538CD1C33797600C69A89 /* GRMessagesCommon */ = {
 			isa = PBXGroup;
 			children = (
+				7C2538E21C3382E500C69A89 /* Singleton.h */,
 			);
 			path = GRMessagesCommon;
 			sourceTree = "<group>";
@@ -108,8 +110,8 @@
 			children = (
 				7C2538D01C33797600C69A89 /* AppDelegate.h */,
 				7C2538D11C33797600C69A89 /* AppDelegate.m */,
-				7C2538D21C33797600C69A89 /* ViewController.h */,
-				7C2538D31C33797600C69A89 /* ViewController.m */,
+				7C2538DF1C33825600C69A89 /* DemoGRMessagesViewController.h */,
+				7C2538E01C33825600C69A89 /* DemoGRMessagesViewController.m */,
 			);
 			path = GRMessagesDemo;
 			sourceTree = "<group>";
@@ -225,9 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C2538DB1C33797600C69A89 /* ViewController.m in Sources */,
 				7C2538DA1C33797600C69A89 /* AppDelegate.m in Sources */,
 				7C2538AD1C3370CE00C69A89 /* main.m in Sources */,
+				7C2538E11C33825600C69A89 /* DemoGRMessagesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
