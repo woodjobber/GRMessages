@@ -7,14 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C07BBAC1C33DC440060404A /* GRMessagesTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C07BBAB1C33DC440060404A /* GRMessagesTextView.m */; };
 		7C2538AD1C3370CE00C69A89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2538AC1C3370CE00C69A89 /* main.m */; };
 		7C2538B81C3370CE00C69A89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C2538B71C3370CE00C69A89 /* Assets.xcassets */; };
 		7C2538BB1C3370CE00C69A89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2538B91C3370CE00C69A89 /* LaunchScreen.storyboard */; };
 		7C2538DA1C33797600C69A89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2538D11C33797600C69A89 /* AppDelegate.m */; };
 		7C2538E11C33825600C69A89 /* DemoGRMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2538E01C33825600C69A89 /* DemoGRMessagesViewController.m */; };
+		7C2538E91C3383DF00C69A89 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2538E51C3383DF00C69A89 /* NSString+Extensions.m */; };
+		7C2538EA1C3383DF00C69A89 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2538E81C3383DF00C69A89 /* UIColor+Hex.m */; };
+		7C2538EE1C3383EF00C69A89 /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = 7C2538EC1C3383EF00C69A89 /* pinyin.c */; };
+		7C2538F71C33B82F00C69A89 /* GRMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2538F51C33B82F00C69A89 /* GRMessagesViewController.m */; };
+		7C2538F81C33B82F00C69A89 /* GRMessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2538F61C33B82F00C69A89 /* GRMessagesViewController.xib */; };
+		7C2538FB1C33B98F00C69A89 /* GRMessagesInputToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2538FA1C33B98F00C69A89 /* GRMessagesInputToolbar.m */; };
+		7C2538FE1C33C6D500C69A89 /* GRMessagesCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2538FD1C33C6D500C69A89 /* GRMessagesCollectionViewFlowLayout.m */; };
+		7C2539011C33C94900C69A89 /* GRMessagesInputToolbarContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2539001C33C94900C69A89 /* GRMessagesInputToolbarContentView.m */; };
+		7C2539051C33C9B200C69A89 /* GRMessagesInputToolbarContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2539041C33C9B200C69A89 /* GRMessagesInputToolbarContentView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C07BBAA1C33DC440060404A /* GRMessagesTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesTextView.h; sourceTree = "<group>"; };
+		7C07BBAB1C33DC440060404A /* GRMessagesTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesTextView.m; sourceTree = "<group>"; };
 		7C2538A81C3370CE00C69A89 /* GRMessages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GRMessages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C2538AC1C3370CE00C69A89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7C2538B71C3370CE00C69A89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -25,6 +37,22 @@
 		7C2538DF1C33825600C69A89 /* DemoGRMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoGRMessagesViewController.h; sourceTree = "<group>"; };
 		7C2538E01C33825600C69A89 /* DemoGRMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoGRMessagesViewController.m; sourceTree = "<group>"; };
 		7C2538E21C3382E500C69A89 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		7C2538E41C3383DF00C69A89 /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
+		7C2538E51C3383DF00C69A89 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
+		7C2538E71C3383DF00C69A89 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		7C2538E81C3383DF00C69A89 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		7C2538EC1C3383EF00C69A89 /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
+		7C2538ED1C3383EF00C69A89 /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
+		7C2538F41C33B82F00C69A89 /* GRMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesViewController.h; sourceTree = "<group>"; };
+		7C2538F51C33B82F00C69A89 /* GRMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesViewController.m; sourceTree = "<group>"; };
+		7C2538F61C33B82F00C69A89 /* GRMessagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRMessagesViewController.xib; sourceTree = "<group>"; };
+		7C2538F91C33B98F00C69A89 /* GRMessagesInputToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesInputToolbar.h; sourceTree = "<group>"; };
+		7C2538FA1C33B98F00C69A89 /* GRMessagesInputToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesInputToolbar.m; sourceTree = "<group>"; };
+		7C2538FC1C33C6D500C69A89 /* GRMessagesCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		7C2538FD1C33C6D500C69A89 /* GRMessagesCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		7C2538FF1C33C94900C69A89 /* GRMessagesInputToolbarContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesInputToolbarContentView.h; sourceTree = "<group>"; };
+		7C2539001C33C94900C69A89 /* GRMessagesInputToolbarContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesInputToolbarContentView.m; sourceTree = "<group>"; };
+		7C2539041C33C9B200C69A89 /* GRMessagesInputToolbarContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRMessagesInputToolbarContentView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +114,8 @@
 		7C2538CC1C33797600C69A89 /* GRMessagesCategories */ = {
 			isa = PBXGroup;
 			children = (
+				7C2538E31C3383DF00C69A89 /* Nsstring+Extensions */,
+				7C2538E61C3383DF00C69A89 /* UIColor+Hex */,
 			);
 			path = GRMessagesCategories;
 			sourceTree = "<group>";
@@ -93,6 +123,7 @@
 		7C2538CD1C33797600C69A89 /* GRMessagesCommon */ = {
 			isa = PBXGroup;
 			children = (
+				7C2538EB1C3383EF00C69A89 /* pinyin */,
 				7C2538E21C3382E500C69A89 /* Singleton.h */,
 			);
 			path = GRMessagesCommon;
@@ -101,6 +132,9 @@
 		7C2538CE1C33797600C69A89 /* GRMessagesControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7C2538F41C33B82F00C69A89 /* GRMessagesViewController.h */,
+				7C2538F51C33B82F00C69A89 /* GRMessagesViewController.m */,
+				7C2538F61C33B82F00C69A89 /* GRMessagesViewController.xib */,
 			);
 			path = GRMessagesControllers;
 			sourceTree = "<group>";
@@ -133,6 +167,8 @@
 		7C2538D61C33797600C69A89 /* GRMessagesLayout */ = {
 			isa = PBXGroup;
 			children = (
+				7C2538FC1C33C6D500C69A89 /* GRMessagesCollectionViewFlowLayout.h */,
+				7C2538FD1C33C6D500C69A89 /* GRMessagesCollectionViewFlowLayout.m */,
 			);
 			path = GRMessagesLayout;
 			sourceTree = "<group>";
@@ -154,8 +190,42 @@
 		7C2538D91C33797600C69A89 /* GRMessagesViews */ = {
 			isa = PBXGroup;
 			children = (
+				7C2538F91C33B98F00C69A89 /* GRMessagesInputToolbar.h */,
+				7C2538FA1C33B98F00C69A89 /* GRMessagesInputToolbar.m */,
+				7C2538FF1C33C94900C69A89 /* GRMessagesInputToolbarContentView.h */,
+				7C2539001C33C94900C69A89 /* GRMessagesInputToolbarContentView.m */,
+				7C2539041C33C9B200C69A89 /* GRMessagesInputToolbarContentView.xib */,
+				7C07BBAA1C33DC440060404A /* GRMessagesTextView.h */,
+				7C07BBAB1C33DC440060404A /* GRMessagesTextView.m */,
 			);
 			path = GRMessagesViews;
+			sourceTree = "<group>";
+		};
+		7C2538E31C3383DF00C69A89 /* Nsstring+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7C2538E41C3383DF00C69A89 /* NSString+Extensions.h */,
+				7C2538E51C3383DF00C69A89 /* NSString+Extensions.m */,
+			);
+			path = "Nsstring+Extensions";
+			sourceTree = "<group>";
+		};
+		7C2538E61C3383DF00C69A89 /* UIColor+Hex */ = {
+			isa = PBXGroup;
+			children = (
+				7C2538E71C3383DF00C69A89 /* UIColor+Hex.h */,
+				7C2538E81C3383DF00C69A89 /* UIColor+Hex.m */,
+			);
+			path = "UIColor+Hex";
+			sourceTree = "<group>";
+		};
+		7C2538EB1C3383EF00C69A89 /* pinyin */ = {
+			isa = PBXGroup;
+			children = (
+				7C2538EC1C3383EF00C69A89 /* pinyin.c */,
+				7C2538ED1C3383EF00C69A89 /* pinyin.h */,
+			);
+			path = pinyin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +285,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C2539051C33C9B200C69A89 /* GRMessagesInputToolbarContentView.xib in Resources */,
+				7C2538F81C33B82F00C69A89 /* GRMessagesViewController.xib in Resources */,
 				7C2538BB1C3370CE00C69A89 /* LaunchScreen.storyboard in Resources */,
 				7C2538B81C3370CE00C69A89 /* Assets.xcassets in Resources */,
 			);
@@ -227,9 +299,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C2538EE1C3383EF00C69A89 /* pinyin.c in Sources */,
 				7C2538DA1C33797600C69A89 /* AppDelegate.m in Sources */,
+				7C2539011C33C94900C69A89 /* GRMessagesInputToolbarContentView.m in Sources */,
+				7C2538EA1C3383DF00C69A89 /* UIColor+Hex.m in Sources */,
 				7C2538AD1C3370CE00C69A89 /* main.m in Sources */,
+				7C2538F71C33B82F00C69A89 /* GRMessagesViewController.m in Sources */,
 				7C2538E11C33825600C69A89 /* DemoGRMessagesViewController.m in Sources */,
+				7C2538E91C3383DF00C69A89 /* NSString+Extensions.m in Sources */,
+				7C2538FE1C33C6D500C69A89 /* GRMessagesCollectionViewFlowLayout.m in Sources */,
+				7C07BBAC1C33DC440060404A /* GRMessagesTextView.m in Sources */,
+				7C2538FB1C33B98F00C69A89 /* GRMessagesInputToolbar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="qBh-JR-kfh" customClass="GRMessagesInputToolbarContentView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5f2-aj-mig" userLabel="Left button container view">
+                    <rect key="frame" x="8" y="11" width="34" height="34"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="OiY-Do-RE5"/>
+                        <constraint firstAttribute="width" constant="34" id="lgz-z7-nse"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MF2-og-FIp" userLabel="Left second button container view">
+                    <rect key="frame" x="50" y="11" width="34" height="34"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="4gF-vd-xu5"/>
+                        <constraint firstAttribute="width" constant="34" id="lDU-WY-e17"/>
+                    </constraints>
+                </view>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="v8f-EE-16j" customClass="GRMessagesTextView">
+                    <rect key="frame" x="92" y="13" width="178" height="31"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVb-k0-cJa" userLabel="Right button container view">
+                    <rect key="frame" x="278" y="11" width="34" height="34"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="34" id="Tfy-TP-9XT"/>
+                        <constraint firstAttribute="height" constant="34" id="ZVG-CC-4La"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="JVb-k0-cJa" firstAttribute="leading" secondItem="v8f-EE-16j" secondAttribute="trailing" constant="8" id="5un-Dg-cjl"/>
+                <constraint firstAttribute="bottom" secondItem="v8f-EE-16j" secondAttribute="bottom" constant="11" id="8Xq-5z-Oi7"/>
+                <constraint firstItem="v8f-EE-16j" firstAttribute="top" secondItem="qBh-JR-kfh" secondAttribute="top" constant="13" id="Dvl-3P-aYJ"/>
+                <constraint firstItem="MF2-og-FIp" firstAttribute="top" secondItem="JVb-k0-cJa" secondAttribute="top" id="L4v-0H-tEI"/>
+                <constraint firstItem="5f2-aj-mig" firstAttribute="top" secondItem="qBh-JR-kfh" secondAttribute="top" constant="11" id="OM0-zg-TUg"/>
+                <constraint firstItem="MF2-og-FIp" firstAttribute="top" secondItem="5f2-aj-mig" secondAttribute="top" id="RsQ-mV-MYp"/>
+                <constraint firstItem="5f2-aj-mig" firstAttribute="leading" secondItem="qBh-JR-kfh" secondAttribute="leading" constant="8" id="TkM-ZP-jga"/>
+                <constraint firstItem="MF2-og-FIp" firstAttribute="leading" secondItem="5f2-aj-mig" secondAttribute="trailing" constant="8" id="Vbl-WQ-WYC"/>
+                <constraint firstItem="v8f-EE-16j" firstAttribute="leading" secondItem="MF2-og-FIp" secondAttribute="trailing" constant="8" id="WQ3-8z-2km"/>
+                <constraint firstAttribute="trailing" secondItem="JVb-k0-cJa" secondAttribute="trailing" constant="8" id="uOn-m8-Yuj"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="leftBarButtonContainerView" destination="5f2-aj-mig" id="DHb-Td-vvI"/>
+                <outlet property="leftBarButtonContainerViewHeightContraint" destination="OiY-Do-RE5" id="ROS-dS-eab"/>
+                <outlet property="leftBarButtonContainerViewWidthContraint" destination="lgz-z7-nse" id="4JA-Uu-mZk"/>
+                <outlet property="leftHorizontalSpaceContraint" destination="TkM-ZP-jga" id="yXy-Od-B32"/>
+                <outlet property="leftSecondBarButtonContainerView" destination="MF2-og-FIp" id="Pew-8K-iTC"/>
+                <outlet property="leftSecondBarButtonContainerViewHeightContraint" destination="4gF-vd-xu5" id="btp-4j-Elf"/>
+                <outlet property="leftSecondBarButtonContainerViewWidthContraint" destination="lDU-WY-e17" id="7Z2-69-DiQ"/>
+                <outlet property="rightBarButtonContainerView" destination="JVb-k0-cJa" id="sFM-Ww-p8o"/>
+                <outlet property="rightBarButtonContainerViewHeightContraint" destination="ZVG-CC-4La" id="2eq-xr-f2E"/>
+                <outlet property="rightBarButtonContainerViewWidthContraint" destination="Tfy-TP-9XT" id="mga-yu-Lri"/>
+                <outlet property="rightHorizontalSpaceContraint" destination="uOn-m8-Yuj" id="z0s-NS-J7b"/>
+                <outlet property="textView" destination="v8f-EE-16j" id="Jt3-k8-Y9T"/>
+            </connections>
+            <point key="canvasLocation" x="222" y="302.5"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GRMessagesViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Fdl-D2-CgN">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="513"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewLayout key="collectionViewLayout" id="tka-Oz-3uC" customClass="GRMessagesCollectionViewFlowLayout"/>
+                </collectionView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EmK-mQ-HOk" userLabel="Input Toolbar" customClass="GRMessagesInputToolbar">
+                    <rect key="frame" x="0.0" y="513" width="320" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="Kxm-xH-2JW"/>
+                        <constraint firstAttribute="height" constant="55" id="fbf-dV-xwh"/>
+                    </constraints>
+                    <items/>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Fdl-D2-CgN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Cbt-aC-dc1"/>
+                <constraint firstItem="EmK-mQ-HOk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MWM-yL-N1e"/>
+                <constraint firstAttribute="bottom" secondItem="EmK-mQ-HOk" secondAttribute="bottom" id="U77-DC-Mur"/>
+                <constraint firstItem="EmK-mQ-HOk" firstAttribute="bottom" secondItem="Fdl-D2-CgN" secondAttribute="bottom" constant="55" id="jls-AR-Oda"/>
+                <constraint firstItem="EmK-mQ-HOk" firstAttribute="trailing" secondItem="Fdl-D2-CgN" secondAttribute="trailing" id="l3U-NA-rSZ"/>
+                <constraint firstItem="EmK-mQ-HOk" firstAttribute="leading" secondItem="Fdl-D2-CgN" secondAttribute="leading" id="pvs-dm-zJp"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="518" y="425"/>
+        </view>
+    </objects>
+</document>
