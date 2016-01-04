@@ -20,7 +20,7 @@ FOUNDATION_EXPORT NSString * const kGRMessagesAudioServicePlaySystemSoundTypeAIF
 FOUNDATION_EXPORT NSString * const kGRMessagesAudioServicePlaySystemSoundTypeAIFF;
 
 typedef void(^GRMessagesAudioServicePlaySystemSoundCompletionBlock)(void);
-
+typedef void(^GRMessagesAudioServicePlaySystemSoundRemoveCompletionBlock)(void);
 @interface GRMessagsAudioServicesPlaySystemSound : NSObject
 
 @property (nonatomic,assign,readonly) BOOL isEnable;
@@ -40,6 +40,8 @@ AS_SINGLETON(GRMessagsAudioServicesPlaySystemSound);
 - (void)grmsg_AudioServicesPlaySystemSoundToTogglePlaySoundEnable:(BOOL)isEnable;
 
 - (void)grmsg_AudioServicesPlaySystemSoundToStopAllSounds;
+
+- (void)grmsg_AudioServicesPlaySystemSoundToStopAllSoundsAfterCompletionBlcok:(GRMessagesAudioServicePlaySystemSoundRemoveCompletionBlock)completionBlock;
 
 - (void)grmsg_AudioServicesPlaySystemSoundToPlayVibrateSound;
 

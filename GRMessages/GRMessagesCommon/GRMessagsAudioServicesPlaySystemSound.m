@@ -48,10 +48,10 @@ static void audioServicesSystemSoundCompletionProc(SystemSoundID ssID, void *dat
 
 @implementation GRMessagsAudioServicesPlaySystemSound
 #pragma mark -- config
-- (void)didReceiveMemoryWarningNot:(NSNotification *)noti{
-    [self _configAudioServicesPlaySystemSoundToStopAllSounds];
+-(void)didReceiveMemoryWarningNot:(NSNotification *)noti{
+    [self _configAudioServicesPlaySystemSoundToStopAllSounds:nil];
 }
-- (instancetype)init{
+-(instancetype)init{
     if (self = [super init]) {
         _sounds = [[NSMutableDictionary alloc]init];
         _bundle = [NSBundle mainBundle];
@@ -76,7 +76,7 @@ static void audioServicesSystemSoundCompletionProc(SystemSoundID ssID, void *dat
 }
 
 -(void)dealloc{
-    [self _configAudioServicesPlaySystemSoundToStopAllSounds];
+    [self _configAudioServicesPlaySystemSoundToStopAllSounds:nil];
     _sounds = nil;
     _completionData = nil;
     self.completionBlocks = nil;
@@ -111,9 +111,12 @@ DEF_SINGLETON(GRMessagsAudioServicesPlaySystemSound);
 }
 
 - (void)grmsg_AudioServicesPlaySystemSoundToStopAllSounds{
-    [self _configAudioServicesPlaySystemSoundToStopAllSounds];
+    [self grmsg_AudioServicesPlaySystemSoundToStopAllSoundsAfterCompletionBlcok:nil];
+    
 }
-
+- (void)grmsg_AudioServicesPlaySystemSoundToStopAllSoundsAfterCompletionBlcok:(GRMessagesAudioServicePlaySystemSoundRemoveCompletionBlock)completionBlock{
+    [self _configAudioServicesPlaySystemSoundToStopAllSounds:completionBlock];
+}
 - (void)grmsg_AudioServicesPlaySystemSoundToPreloadSoundWithFullPathFileNmae:(NSString *)fullPathFileName fileExtensionType:(NSString *)fileExtensionType{
     [self _configAudioServicesPlaySystemSoundToPreloadSoundWithFullPathFileNmae:(NSString *)fullPathFileName fileExtensionType:(NSString *)fileExtensionType];
 }
@@ -205,16 +208,19 @@ DEF_SINGLETON(GRMessagsAudioServicesPlaySystemSound);
 
     [userDefaults synchronize];
     if (!enable) {
-        [self _configAudioServicesPlaySystemSoundToStopAllSounds];
+        [self _configAudioServicesPlaySystemSoundToStopAllSounds:nil];
     }
 }
 
--(void)_configAudioServicesPlaySystemSoundToStopAllSounds{
+-(void)_configAudioServicesPlaySystemSoundToStopAllSounds:(GRMessagesAudioServicePlaySystemSoundRemoveCompletionBlock)completionBlock{
    [self.sounds enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
        [self _configAudioServicesPlaySystemSoundToUnloadSoundIDForFullPathFileNamed:key];
    }];
     [self.sounds removeAllObjects];
     [self.completionData removeAllObjects];
+    if (completionBlock) {
+        completionBlock();
+    }
 }
 
 -(void)_configAudioServicesPlaySystemSoundToUnloadSoundIDForFullPathFileNamed:(NSString *)fullPathFileName{
