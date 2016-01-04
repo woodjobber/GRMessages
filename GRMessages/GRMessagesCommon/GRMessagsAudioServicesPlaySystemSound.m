@@ -1,8 +1,15 @@
- 
+//
+//  GRMessagsAudioServicesPlaySystemSound.h
+//  GRMessages
+//
+//  Created by chengbin on 16/1/4.
+//  Copyright © 2016年 chengbin. All rights reserved.
+//
+
 #import "GRMessagsAudioServicesPlaySystemSound.h"
 #import <UIKit/UIKit.h>
-#import <AudioToolbox/AudioToolbox.h>
 #import <objc/runtime.h>
+
 @interface NSMutableDictionary (safe)
 - (id)safeObjectForKey:(id)key;
 - (void)safeSetObject:(id)object forKey:(id)key;
@@ -47,7 +54,7 @@ static void audioServicesSystemSoundCompletionProc(SystemSoundID ssID, void *dat
 @end
 
 @implementation GRMessagsAudioServicesPlaySystemSound
-#pragma mark -- config
+#pragma mark -- initial
 -(void)didReceiveMemoryWarningNot:(NSNotification *)noti{
     [self _configAudioServicesPlaySystemSoundToStopAllSounds:nil];
 }
@@ -308,7 +315,7 @@ DEF_SINGLETON(GRMessagsAudioServicesPlaySystemSound);
 }
 
 @end
-
+#pragma mark-- Callback
 static void audioServicesSystemSoundCompletionProc(SystemSoundID ssID, void *data){
     GRMessagsAudioServicesPlaySystemSound *play = [GRMessagsAudioServicesPlaySystemSound sharedInstance];
     GRMessagesAudioServicePlaySystemSoundCompletionBlock completionBlock = [play _configAudioServicesPlaySystemSoundToGetCompletionBlockForSoundID:ssID];

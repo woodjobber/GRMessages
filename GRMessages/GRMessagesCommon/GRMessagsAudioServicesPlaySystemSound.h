@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "Singleton.h"
+#import <AudioToolbox/AudioToolbox.h>
+
 //It only supports audio data formats linear PCM or IMA4
 //It only supports audio file formats caf, aif, or waf,aiff
 //The sounds must be 30 seconds or less in length
@@ -48,5 +50,7 @@ AS_SINGLETON(GRMessagsAudioServicesPlaySystemSound);
 - (void)grmsg_AudioServicesPlaySystemSoundToStopSoundWithFullPathFileName:(NSString *)fullPathFileName fileExtensionType:(NSString *)fileExtensionType;
 
 - (void)grmsg_AudioServicesPlaySystemSoundToPreloadSoundWithFullPathFileNmae:(NSString *)fullPathFileName fileExtensionType:(NSString *)fileExtensionType;
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 @end
