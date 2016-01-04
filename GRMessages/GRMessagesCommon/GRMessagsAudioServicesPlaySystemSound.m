@@ -55,7 +55,7 @@ static void audioServicesSystemSoundCompletionProc(SystemSoundID ssID, void *dat
     if (self = [super init]) {
         _sounds = [[NSMutableDictionary alloc]init];
         _bundle = [NSBundle mainBundle];
-        
+        _isEnable = [self _configAudioServicesPlaySystemSoundToToGetAudioServicesPlaySystemSoundEnableFromNSUserDefaults];
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(didReceiveMemoryWarningNot:) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
     }
     return self;
@@ -80,6 +80,7 @@ static void audioServicesSystemSoundCompletionProc(SystemSoundID ssID, void *dat
     _sounds = nil;
     _completionData = nil;
     self.completionBlocks = nil;
+    _bundle = nil;
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
 }
 
@@ -179,7 +180,7 @@ DEF_SINGLETON(GRMessagsAudioServicesPlaySystemSound);
         if (error == kAudioServicesNoError) {
             return soundID;
         }else{
-             [self logError:error withMessage:message];
+             [self _logError:error withMessage:message];
              return 0;
         }
     }else{
@@ -229,7 +230,7 @@ DEF_SINGLETON(GRMessagsAudioServicesPlaySystemSound);
         AudioServicesRemoveSystemSoundCompletion(soundID);
         OSStatus error = AudioServicesDisposeSystemSoundID(soundID);
         NSString *messgae = [NSString stringWithFormat:@"SystemSoundID(%d) disposed info.",soundID];
-        [self logError:error withMessage:messgae];
+        [self _logError:error withMessage:messgae];
     }
 }
 -(SystemSoundID)_configAudioServicesPlaySystemSoundToGetSoundIDForFullPathFileNameKey:(NSString *)fullPathFileNameKey{
@@ -253,7 +254,7 @@ DEF_SINGLETON(GRMessagsAudioServicesPlaySystemSound);
 -(GRMessagesAudioServicePlaySystemSoundCompletionBlock)_configAudioServicesPlaySystemSoundToGetCompletionBlockForSoundID:(SystemSoundID)SoundID{
     return [self.completionData safeObjectForKey:[self _configAudioServicesPlaySystemSoundToTransformIntoDataBySoundID:SoundID]];
 }
--(void)logError:(OSStatus)errorStatus withMessage:(NSString *)message{
+-(void)_logError:(OSStatus)errorStatus withMessage:(NSString *)message{
     /*!
      @enum           AudioServices error codes
      @abstract       Error codes returned from the AudioServices portion of the API.
