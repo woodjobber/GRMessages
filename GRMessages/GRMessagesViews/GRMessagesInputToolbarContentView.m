@@ -77,7 +77,7 @@ const CGFloat kGRMessagesInputToolbarContentViewHorizontalSpaceContaraintDefault
         [item setTranslatesAutoresizingMaskIntoConstraints:NO];
         [containerView addSubview:item];
         [containerView bringSubviewToFront:item];
-        [containerView GRMessages_insertSubView:item constant:0.0f];
+        [containerView grmsg_insertSubView:item constant:0.0f];
         
         [containerView setNeedsUpdateConstraints];
         [containerView updateConstraintsIfNeeded];

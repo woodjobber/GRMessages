@@ -23,6 +23,10 @@
 		7C2538FE1C33C6D500C69A89 /* GRMessagesCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2538FD1C33C6D500C69A89 /* GRMessagesCollectionViewFlowLayout.m */; };
 		7C2539011C33C94900C69A89 /* GRMessagesInputToolbarContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2539001C33C94900C69A89 /* GRMessagesInputToolbarContentView.m */; };
 		7C2539051C33C9B200C69A89 /* GRMessagesInputToolbarContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2539041C33C9B200C69A89 /* GRMessagesInputToolbarContentView.xib */; };
+		7CEF62C31C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CEF62C21C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.m */; };
+		7CEF62C61C3A112B009D9F9D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEF62C51C3A112B009D9F9D /* UIKit.framework */; };
+		7CEF62C81C3A113C009D9F9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEF62C71C3A113C009D9F9D /* Foundation.framework */; };
+		7CEF62CA1C3A1152009D9F9D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEF62C91C3A1152009D9F9D /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +60,11 @@
 		7C2538FF1C33C94900C69A89 /* GRMessagesInputToolbarContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesInputToolbarContentView.h; sourceTree = "<group>"; };
 		7C2539001C33C94900C69A89 /* GRMessagesInputToolbarContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesInputToolbarContentView.m; sourceTree = "<group>"; };
 		7C2539041C33C9B200C69A89 /* GRMessagesInputToolbarContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRMessagesInputToolbarContentView.xib; sourceTree = "<group>"; };
+		7CEF62C11C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagsAudioServicesPlaySystemSound.h; sourceTree = "<group>"; };
+		7CEF62C21C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagsAudioServicesPlaySystemSound.m; sourceTree = "<group>"; };
+		7CEF62C51C3A112B009D9F9D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7CEF62C71C3A113C009D9F9D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7CEF62C91C3A1152009D9F9D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +72,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CEF62CA1C3A1152009D9F9D /* AudioToolbox.framework in Frameworks */,
+				7CEF62C81C3A113C009D9F9D /* Foundation.framework in Frameworks */,
+				7CEF62C61C3A112B009D9F9D /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +100,7 @@
 		7C2538AA1C3370CE00C69A89 /* GRMessages */ = {
 			isa = PBXGroup;
 			children = (
+				7CEF62C41C3A1102009D9F9D /* Frameworks */,
 				7C2538CC1C33797600C69A89 /* GRMessagesCategories */,
 				7C2538CD1C33797600C69A89 /* GRMessagesCommon */,
 				7C2538CE1C33797600C69A89 /* GRMessagesControllers */,
@@ -130,6 +143,8 @@
 			children = (
 				7C2538EB1C3383EF00C69A89 /* pinyin */,
 				7C2538E21C3382E500C69A89 /* Singleton.h */,
+				7CEF62C11C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.h */,
+				7CEF62C21C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.m */,
 			);
 			path = GRMessagesCommon;
 			sourceTree = "<group>";
@@ -233,6 +248,16 @@
 			path = pinyin;
 			sourceTree = "<group>";
 		};
+		7CEF62C41C3A1102009D9F9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CEF62C91C3A1152009D9F9D /* AudioToolbox.framework */,
+				7CEF62C71C3A113C009D9F9D /* Foundation.framework */,
+				7CEF62C51C3A112B009D9F9D /* UIKit.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -310,6 +335,7 @@
 				7C2538EA1C3383DF00C69A89 /* UIColor+Hex.m in Sources */,
 				7C2538AD1C3370CE00C69A89 /* main.m in Sources */,
 				7C07BBAF1C352D970060404A /* UIView+InputToolbarContentViewLayoutEdge.m in Sources */,
+				7CEF62C31C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.m in Sources */,
 				7C2538F71C33B82F00C69A89 /* GRMessagesViewController.m in Sources */,
 				7C2538E11C33825600C69A89 /* DemoGRMessagesViewController.m in Sources */,
 				7C2538E91C3383DF00C69A89 /* NSString+Extensions.m in Sources */,
