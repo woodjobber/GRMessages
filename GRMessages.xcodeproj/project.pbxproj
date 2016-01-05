@@ -24,6 +24,10 @@
 		7C2539011C33C94900C69A89 /* GRMessagesInputToolbarContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2539001C33C94900C69A89 /* GRMessagesInputToolbarContentView.m */; };
 		7C2539051C33C9B200C69A89 /* GRMessagesInputToolbarContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2539041C33C9B200C69A89 /* GRMessagesInputToolbarContentView.xib */; };
 		7CB853AE1C3A9F4500BE417F /* NSBundle+GRMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB853AD1C3A9F4500BE417F /* NSBundle+GRMessages.m */; };
+		7CB853F61C3B67FC00BE417F /* GRMessagesAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7CB853F51C3B67FC00BE417F /* GRMessagesAssets.bundle */; };
+		7CB853F91C3B941D00BE417F /* UIImage+GRMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB853F81C3B941D00BE417F /* UIImage+GRMessages.m */; };
+		7CB853FC1C3BA9CD00BE417F /* UIColor+GRMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB853FB1C3BA9CD00BE417F /* UIColor+GRMessages.m */; };
+		7CB853FF1C3BE65900BE417F /* UIDevice+GRMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB853FE1C3BE65900BE417F /* UIDevice+GRMessages.m */; };
 		7CE7B81E1C3A87CD003A072B /* NSUserDefaults+GRMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE7B81D1C3A87CD003A072B /* NSUserDefaults+GRMessages.m */; };
 		7CE7B8211C3A880A003A072B /* GRMessagsAudioServicesPlaySystemSound+GRMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE7B8201C3A880A003A072B /* GRMessagsAudioServicesPlaySystemSound+GRMessages.m */; };
 		7CEF62C31C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CEF62C21C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.m */; };
@@ -65,6 +69,13 @@
 		7C2539041C33C9B200C69A89 /* GRMessagesInputToolbarContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRMessagesInputToolbarContentView.xib; sourceTree = "<group>"; };
 		7CB853AC1C3A9F4500BE417F /* NSBundle+GRMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+GRMessages.h"; sourceTree = "<group>"; };
 		7CB853AD1C3A9F4500BE417F /* NSBundle+GRMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+GRMessages.m"; sourceTree = "<group>"; };
+		7CB853F51C3B67FC00BE417F /* GRMessagesAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GRMessagesAssets.bundle; sourceTree = "<group>"; };
+		7CB853F71C3B941D00BE417F /* UIImage+GRMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GRMessages.h"; sourceTree = "<group>"; };
+		7CB853F81C3B941D00BE417F /* UIImage+GRMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GRMessages.m"; sourceTree = "<group>"; };
+		7CB853FA1C3BA9CD00BE417F /* UIColor+GRMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GRMessages.h"; sourceTree = "<group>"; };
+		7CB853FB1C3BA9CD00BE417F /* UIColor+GRMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GRMessages.m"; sourceTree = "<group>"; };
+		7CB853FD1C3BE65900BE417F /* UIDevice+GRMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+GRMessages.h"; sourceTree = "<group>"; };
+		7CB853FE1C3BE65900BE417F /* UIDevice+GRMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+GRMessages.m"; sourceTree = "<group>"; };
 		7CE7B81C1C3A87CD003A072B /* NSUserDefaults+GRMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+GRMessages.h"; sourceTree = "<group>"; };
 		7CE7B81D1C3A87CD003A072B /* NSUserDefaults+GRMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+GRMessages.m"; sourceTree = "<group>"; };
 		7CE7B81F1C3A880A003A072B /* GRMessagsAudioServicesPlaySystemSound+GRMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GRMessagsAudioServicesPlaySystemSound+GRMessages.h"; sourceTree = "<group>"; };
@@ -109,7 +120,6 @@
 		7C2538AA1C3370CE00C69A89 /* GRMessages */ = {
 			isa = PBXGroup;
 			children = (
-				7CEF62C41C3A1102009D9F9D /* Frameworks */,
 				7C2538CC1C33797600C69A89 /* GRMessagesCategories */,
 				7C2538CD1C33797600C69A89 /* GRMessagesCommon */,
 				7C2538CE1C33797600C69A89 /* GRMessagesControllers */,
@@ -149,6 +159,12 @@
 				7CE7B8201C3A880A003A072B /* GRMessagsAudioServicesPlaySystemSound+GRMessages.m */,
 				7CB853AC1C3A9F4500BE417F /* NSBundle+GRMessages.h */,
 				7CB853AD1C3A9F4500BE417F /* NSBundle+GRMessages.m */,
+				7CB853F71C3B941D00BE417F /* UIImage+GRMessages.h */,
+				7CB853F81C3B941D00BE417F /* UIImage+GRMessages.m */,
+				7CB853FA1C3BA9CD00BE417F /* UIColor+GRMessages.h */,
+				7CB853FB1C3BA9CD00BE417F /* UIColor+GRMessages.m */,
+				7CB853FD1C3BE65900BE417F /* UIDevice+GRMessages.h */,
+				7CB853FE1C3BE65900BE417F /* UIDevice+GRMessages.m */,
 			);
 			path = GRMessagesCategories;
 			sourceTree = "<group>";
@@ -195,6 +211,7 @@
 		7C2538D51C33797600C69A89 /* GRMessagesFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7CEF62C41C3A1102009D9F9D /* Frameworks */,
 			);
 			path = GRMessagesFrameworks;
 			sourceTree = "<group>";
@@ -218,6 +235,7 @@
 		7C2538D81C33797600C69A89 /* GRMessagesResource */ = {
 			isa = PBXGroup;
 			children = (
+				7CB853F51C3B67FC00BE417F /* GRMessagesAssets.bundle */,
 			);
 			path = GRMessagesResource;
 			sourceTree = "<group>";
@@ -270,7 +288,8 @@
 				7CEF62C71C3A113C009D9F9D /* Foundation.framework */,
 				7CEF62C51C3A112B009D9F9D /* UIKit.framework */,
 			);
-			path = Frameworks;
+			name = Frameworks;
+			path = ../Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +333,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 7C25389F1C3370CE00C69A89;
 			productRefGroup = 7C2538A91C3370CE00C69A89 /* Products */;
@@ -333,6 +353,7 @@
 				7C2539051C33C9B200C69A89 /* GRMessagesInputToolbarContentView.xib in Resources */,
 				7C2538F81C33B82F00C69A89 /* GRMessagesViewController.xib in Resources */,
 				7C2538BB1C3370CE00C69A89 /* LaunchScreen.storyboard in Resources */,
+				7CB853F61C3B67FC00BE417F /* GRMessagesAssets.bundle in Resources */,
 				7C2538B81C3370CE00C69A89 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,9 +371,12 @@
 				7C2539011C33C94900C69A89 /* GRMessagesInputToolbarContentView.m in Sources */,
 				7C2538EA1C3383DF00C69A89 /* UIColor+Hex.m in Sources */,
 				7CE7B81E1C3A87CD003A072B /* NSUserDefaults+GRMessages.m in Sources */,
+				7CB853FC1C3BA9CD00BE417F /* UIColor+GRMessages.m in Sources */,
+				7CB853F91C3B941D00BE417F /* UIImage+GRMessages.m in Sources */,
 				7C2538AD1C3370CE00C69A89 /* main.m in Sources */,
 				7CB853AE1C3A9F4500BE417F /* NSBundle+GRMessages.m in Sources */,
 				7C07BBAF1C352D970060404A /* UIView+InputToolbarContentViewLayoutEdge.m in Sources */,
+				7CB853FF1C3BE65900BE417F /* UIDevice+GRMessages.m in Sources */,
 				7CEF62C31C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.m in Sources */,
 				7C2538F71C33B82F00C69A89 /* GRMessagesViewController.m in Sources */,
 				7C2538E11C33825600C69A89 /* DemoGRMessagesViewController.m in Sources */,

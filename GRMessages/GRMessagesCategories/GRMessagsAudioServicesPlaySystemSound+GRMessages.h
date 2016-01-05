@@ -10,4 +10,20 @@
 
 @interface GRMessagsAudioServicesPlaySystemSound (GRMessages)
 
++ (void)grmsg_playMessageReceivedSoundFromUISounds;
+
++ (void)grmsg_playMessageReceivedAlertSoundFromUISounds;
+
++ (void)grmsg_playMessageSentSoundFromUISounds;
+
++ (void)grmsg_playMessageSentAlertSoundFromUISounds;
+
++ (void)grmsg_palyMessageReceivedSoundFromBundle;
+
++ (void)grmsg_playMessageReceivedAlertSoundFromBundle;
+
++ (void)grmsg_playMessageSentSoundFromBundle;
+
++ (void)grmsg_playMessageSentAlertSoundFromBundle;
+
 @end
