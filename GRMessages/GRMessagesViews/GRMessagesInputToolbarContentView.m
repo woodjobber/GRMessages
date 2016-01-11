@@ -13,30 +13,31 @@
 const CGFloat kGRMessagesInputToolbarContentViewHorizontalSpaceContaraintDefault = 8.0f;
 
 @interface GRMessagesInputToolbarContentView()
-@property (nonatomic, weak,readwrite) IBOutlet GRMessagesTextView *textView;
-@property (nonatomic, weak,readwrite) IBOutlet UIView *leftBarButtonContainerView;
-@property (nonatomic, weak,readwrite) IBOutlet UIView *leftSecondBarButtonContainerView;
-@property (nonatomic, weak,readwrite) IBOutlet UIView *rightBarButtonContainerView;
+
+@property (nonatomic, weak, readwrite) IBOutlet GRMessagesTextView *textView;
+@property (nonatomic, weak, readwrite) IBOutlet UIView *leftBarButtonContainerView;
+@property (nonatomic, weak, readwrite) IBOutlet UIView *leftSecondBarButtonContainerView;
+@property (nonatomic, weak, readwrite) IBOutlet UIView *rightBarButtonContainerView;
 
 
-@property (nonatomic, weak,readwrite) IBOutlet NSLayoutConstraint *leftBarButtonContainerViewWidthContraint;
-@property (nonatomic, weak,readwrite) IBOutlet NSLayoutConstraint *leftSecondBarButtonContainerViewWidthContraint;
-@property (nonatomic, weak,readwrite) IBOutlet NSLayoutConstraint *rightBarButtonContainerViewWidthContraint;
+@property (nonatomic, weak, readwrite) IBOutlet NSLayoutConstraint *leftBarButtonContainerViewWidthContraint;
+@property (nonatomic, weak, readwrite) IBOutlet NSLayoutConstraint *leftSecondBarButtonContainerViewWidthContraint;
+@property (nonatomic, weak, readwrite) IBOutlet NSLayoutConstraint *rightBarButtonContainerViewWidthContraint;
 
-@property (nonatomic, weak,readwrite) IBOutlet NSLayoutConstraint *leftBarButtonContainerViewHeightContraint;
-@property (nonatomic, weak,readwrite) IBOutlet NSLayoutConstraint *leftSecondBarButtonContainerViewHeightContraint;
-@property (nonatomic, weak,readwrite) IBOutlet NSLayoutConstraint *rightBarButtonContainerViewHeightContraint;
-
-
-@property (nonatomic, weak,readwrite) IBOutlet NSLayoutConstraint *leftHorizontalSpaceContraint;
-@property (nonatomic, weak,readwrite) IBOutlet NSLayoutConstraint *rightHorizontalSpaceContraint;
+@property (nonatomic, weak, readwrite) IBOutlet NSLayoutConstraint *leftBarButtonContainerViewHeightContraint;
+@property (nonatomic, weak, readwrite) IBOutlet NSLayoutConstraint *leftSecondBarButtonContainerViewHeightContraint;
+@property (nonatomic, weak, readwrite) IBOutlet NSLayoutConstraint *rightBarButtonContainerViewHeightContraint;
 
 
-@property (nonatomic,weak,readwrite) IBOutlet NSLayoutConstraint *leftVerticalSpaceBottomContraint;
-@property (nonatomic,weak,readwrite) IBOutlet NSLayoutConstraint *leftSecondVerticalSpaceBottomContraint;
-@property (nonatomic,weak,readwrite) IBOutlet NSLayoutConstraint *textViewVerticalSpaceBottomContranit;
-@property (nonatomic,weak,readwrite) IBOutlet NSLayoutConstraint *textViewVerticalSpaceTopContranit;
-@property (nonatomic,weak,readwrite) IBOutlet NSLayoutConstraint *rightVerticalSpaceBottomContraint;
+@property (nonatomic, weak, readwrite) IBOutlet NSLayoutConstraint *leftHorizontalSpaceContraint;
+@property (nonatomic, weak, readwrite) IBOutlet NSLayoutConstraint *rightHorizontalSpaceContraint;
+
+
+@property (nonatomic, weak, readwrite) IBOutlet NSLayoutConstraint *leftVerticalSpaceBottomContraint;
+@property (nonatomic, weak, readwrite) IBOutlet NSLayoutConstraint *leftSecondVerticalSpaceBottomContraint;
+@property (nonatomic, weak, readwrite) IBOutlet NSLayoutConstraint *textViewVerticalSpaceBottomContranit;
+@property (nonatomic, weak, readwrite) IBOutlet NSLayoutConstraint *textViewVerticalSpaceTopContranit;
+@property (nonatomic, weak, readwrite) IBOutlet NSLayoutConstraint *rightVerticalSpaceBottomContraint;
 
 
 @end

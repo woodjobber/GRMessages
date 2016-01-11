@@ -28,6 +28,9 @@
 		7CB853F91C3B941D00BE417F /* UIImage+GRMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB853F81C3B941D00BE417F /* UIImage+GRMessages.m */; };
 		7CB853FC1C3BA9CD00BE417F /* UIColor+GRMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB853FB1C3BA9CD00BE417F /* UIColor+GRMessages.m */; };
 		7CB853FF1C3BE65900BE417F /* UIDevice+GRMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB853FE1C3BE65900BE417F /* UIDevice+GRMessages.m */; };
+		7CDD82241C439D4A0059D2EA /* GRMessagesInputToolbarButtonFactroy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD82231C439D4A0059D2EA /* GRMessagesInputToolbarButtonFactroy.m */; };
+		7CDD82271C43B7EB0059D2EA /* GRMessagesSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD82261C43B7EB0059D2EA /* GRMessagesSlideView.m */; };
+		7CDD822A1C43B80A0059D2EA /* GRMessagesGarbageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD82291C43B80A0059D2EA /* GRMessagesGarbageView.m */; };
 		7CE7B81E1C3A87CD003A072B /* NSUserDefaults+GRMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE7B81D1C3A87CD003A072B /* NSUserDefaults+GRMessages.m */; };
 		7CE7B8211C3A880A003A072B /* GRMessagsAudioServicesPlaySystemSound+GRMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE7B8201C3A880A003A072B /* GRMessagsAudioServicesPlaySystemSound+GRMessages.m */; };
 		7CEF62C31C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CEF62C21C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.m */; };
@@ -76,6 +79,12 @@
 		7CB853FB1C3BA9CD00BE417F /* UIColor+GRMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GRMessages.m"; sourceTree = "<group>"; };
 		7CB853FD1C3BE65900BE417F /* UIDevice+GRMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+GRMessages.h"; sourceTree = "<group>"; };
 		7CB853FE1C3BE65900BE417F /* UIDevice+GRMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+GRMessages.m"; sourceTree = "<group>"; };
+		7CDD82221C439D4A0059D2EA /* GRMessagesInputToolbarButtonFactroy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesInputToolbarButtonFactroy.h; sourceTree = "<group>"; };
+		7CDD82231C439D4A0059D2EA /* GRMessagesInputToolbarButtonFactroy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesInputToolbarButtonFactroy.m; sourceTree = "<group>"; };
+		7CDD82251C43B7EB0059D2EA /* GRMessagesSlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesSlideView.h; sourceTree = "<group>"; };
+		7CDD82261C43B7EB0059D2EA /* GRMessagesSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesSlideView.m; sourceTree = "<group>"; };
+		7CDD82281C43B80A0059D2EA /* GRMessagesGarbageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesGarbageView.h; sourceTree = "<group>"; };
+		7CDD82291C43B80A0059D2EA /* GRMessagesGarbageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesGarbageView.m; sourceTree = "<group>"; };
 		7CE7B81C1C3A87CD003A072B /* NSUserDefaults+GRMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+GRMessages.h"; sourceTree = "<group>"; };
 		7CE7B81D1C3A87CD003A072B /* NSUserDefaults+GRMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+GRMessages.m"; sourceTree = "<group>"; };
 		7CE7B81F1C3A880A003A072B /* GRMessagsAudioServicesPlaySystemSound+GRMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GRMessagsAudioServicesPlaySystemSound+GRMessages.h"; sourceTree = "<group>"; };
@@ -204,6 +213,8 @@
 		7C2538D41C33797600C69A89 /* GRMessagesFactories */ = {
 			isa = PBXGroup;
 			children = (
+				7CDD82221C439D4A0059D2EA /* GRMessagesInputToolbarButtonFactroy.h */,
+				7CDD82231C439D4A0059D2EA /* GRMessagesInputToolbarButtonFactroy.m */,
 			);
 			path = GRMessagesFactories;
 			sourceTree = "<group>";
@@ -250,6 +261,10 @@
 				7C2539041C33C9B200C69A89 /* GRMessagesInputToolbarContentView.xib */,
 				7C07BBAA1C33DC440060404A /* GRMessagesTextView.h */,
 				7C07BBAB1C33DC440060404A /* GRMessagesTextView.m */,
+				7CDD82251C43B7EB0059D2EA /* GRMessagesSlideView.h */,
+				7CDD82261C43B7EB0059D2EA /* GRMessagesSlideView.m */,
+				7CDD82281C43B80A0059D2EA /* GRMessagesGarbageView.h */,
+				7CDD82291C43B80A0059D2EA /* GRMessagesGarbageView.m */,
 			);
 			path = GRMessagesViews;
 			sourceTree = "<group>";
@@ -365,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CDD82241C439D4A0059D2EA /* GRMessagesInputToolbarButtonFactroy.m in Sources */,
 				7C2538EE1C3383EF00C69A89 /* pinyin.c in Sources */,
 				7CE7B8211C3A880A003A072B /* GRMessagsAudioServicesPlaySystemSound+GRMessages.m in Sources */,
 				7C2538DA1C33797600C69A89 /* AppDelegate.m in Sources */,
@@ -373,9 +389,11 @@
 				7CE7B81E1C3A87CD003A072B /* NSUserDefaults+GRMessages.m in Sources */,
 				7CB853FC1C3BA9CD00BE417F /* UIColor+GRMessages.m in Sources */,
 				7CB853F91C3B941D00BE417F /* UIImage+GRMessages.m in Sources */,
+				7CDD82271C43B7EB0059D2EA /* GRMessagesSlideView.m in Sources */,
 				7C2538AD1C3370CE00C69A89 /* main.m in Sources */,
 				7CB853AE1C3A9F4500BE417F /* NSBundle+GRMessages.m in Sources */,
 				7C07BBAF1C352D970060404A /* UIView+InputToolbarContentViewLayoutEdge.m in Sources */,
+				7CDD822A1C43B80A0059D2EA /* GRMessagesGarbageView.m in Sources */,
 				7CB853FF1C3BE65900BE417F /* UIDevice+GRMessages.m in Sources */,
 				7CEF62C31C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.m in Sources */,
 				7C2538F71C33B82F00C69A89 /* GRMessagesViewController.m in Sources */,
@@ -487,6 +505,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GRMessages/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -499,6 +519,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GRMessages/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

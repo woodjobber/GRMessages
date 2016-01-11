@@ -15,6 +15,7 @@ FOUNDATION_EXPORT const CGFloat kGRMessagesInputToolbarContentViewHorizontalSpac
 //Container View
 
 @property (nonatomic, weak, readonly) GRMessagesTextView *textView;
+
 @property (nonatomic, weak, readonly) UIView *leftBarButtonContainerView;
 @property (nonatomic, weak, readonly) UIView *leftSecondBarButtonContainerView;
 @property (nonatomic, weak, readonly) UIView *rightBarButtonContainerView;

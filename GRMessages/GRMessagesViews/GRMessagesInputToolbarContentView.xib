@@ -76,7 +76,7 @@
                 <outlet property="textViewVerticalSpaceBottomContranit" destination="8Xq-5z-Oi7" id="XKu-7w-M9e"/>
                 <outlet property="textViewVerticalSpaceTopContranit" destination="Dvl-3P-aYJ" id="5t0-a7-YBb"/>
             </connections>
-            <point key="canvasLocation" x="222" y="302.5"/>
+            <point key="canvasLocation" x="-232" y="275.5"/>
         </view>
     </objects>
 </document>
