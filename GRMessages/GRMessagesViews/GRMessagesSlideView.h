@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "UIImage+GRMessages.h"
 @interface GRMessagesSlideView : UIView
 @property (nonatomic, strong)UIImage *bodyImage;
 @property (nonatomic, strong)UIImage *headerImage;
-
+@property (nonatomic, strong)UIImage *arrowImage;
+@property (nonatomic, strong)NSString *text;
+@property (nonatomic, strong)UIButton *recordBtn;
+-(void)updateLocation:(CGFloat )offsetX;
 @end

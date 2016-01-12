@@ -13,10 +13,31 @@
 #import "GRMessagesInputToolbarButtonFactroy.h"
 #import "GRMessagesGarbageView.h"
 #import "GRMessagesTextView.h"
+#import "FBShimmeringView.h"
+#import "GRMessagesMacro.h"
+#import "GRMessagesSlideView.h"
+
 
 static void *kGRMessagesInputToolbarKeyObserverContent = &kGRMessagesInputToolbarKeyObserverContent;
+static const CGFloat kFloatCancelRecordingOffsetX      = 100.0f;
+static const CGFloat kFloatGarbageBeginY               = 45.0f;
+static const CGFloat kFloatGarbageAnimationTime        = 0.3f;
+static const CGFloat kFloatRecordImageDownTime         = 0.5f;
+static const CGFloat kFloatRecordImageRotateTime       = 0.17f;
+static const CGFloat kFloatRecordImageUpTime           = 0.5f;
+
 @interface GRMessagesInputToolbar ()
 @property (nonatomic, assign) BOOL isObserving;
+@property (nonatomic, assign) CGPoint trackTouchPoint;
+@property (nonatomic, assign) CGPoint firstTouchPoint;
+@property (nonatomic, strong) UILabel *timeLabel;
+@property (nonatomic, strong) GRMessagesGarbageView *garbageImageView;
+@property (nonatomic, assign) BOOL canCancelAniamtion;
+@property (nonatomic, assign) BOOL isCanceling;
+@property (nonatomic, strong) NSTimer *countTimer;
+@property (nonatomic, assign) NSUInteger currentSeconds;
+@property (nonatomic, strong) FBShimmeringView *slideShimmeringView;
+@property (nonatomic, strong) UIButton *recordBtn;
 @end
 @implementation GRMessagesInputToolbar
 @synthesize delegate =_delegate;
@@ -97,8 +118,8 @@ static void *kGRMessagesInputToolbarKeyObserverContent = &kGRMessagesInputToolba
                 [self.contentView.rightBarButtonItem removeTarget:self action:NULL forControlEvents:UIControlEventTouchUpInside|UIControlEventTouchCancel | UIControlEventTouchUpOutside];
                 
                 [self.contentView.rightBarButtonItem addTarget:self action:@selector(_beginRecord:forEvent:) forControlEvents:UIControlEventTouchDown];
-                [self.contentView.rightBarButtonItem addTarget:self action:@selector(mayCancelRecord:forEvent:) forControlEvents:UIControlEventTouchDragInside|UIControlEventTouchDragOutside];
-                [self.contentView.rightBarButtonItem addTarget:self action:@selector(_fininshRecord:forEvent:) forControlEvents:UIControlEventTouchUpInside|UIControlEventTouchCancel | UIControlEventTouchUpOutside];
+                [self.contentView.rightBarButtonItem addTarget:self action:@selector(_mayCancelRecord:forEvent:) forControlEvents:UIControlEventTouchDragInside|UIControlEventTouchDragOutside];
+                [self.contentView.rightBarButtonItem addTarget:self action:@selector(_fininshedRecord:forEvent:) forControlEvents:UIControlEventTouchUpInside|UIControlEventTouchCancel | UIControlEventTouchUpOutside];
                 
             }
             [self toggleVoiceButtonEnabled];
@@ -137,13 +158,252 @@ static void *kGRMessagesInputToolbarKeyObserverContent = &kGRMessagesInputToolba
     }
 }
 -(void)_beginRecord:(UIButton *)sender forEvent:(UIEvent *)event{
+    self.contentView.leftBarButtonItem.hidden = YES;
+    self.contentView.leftSecondBarButtonItem.hidden = YES;
+    self.contentView.textView.hidden = YES;
+    UITouch *touch = [[event touchesForView:sender] anyObject];
+    self.trackTouchPoint = [touch locationInView:self];
+    self.firstTouchPoint = self.trackTouchPoint;
+    self.isCanceling = NO;
+    [self showSlideView];
+    [self showRecordImageView];
+    if ([self.delegate respondsToSelector:@selector(grmsg_InputToolbarShouldBeginRecord:)]) {
+        [self.delegate grmsg_InputToolbarShouldBeginRecord:self];
+    }
     
 }
 -(void)_mayCancelRecord:(UIButton *)sender forEvent:(UIEvent *)event{
-
+    UITouch *touch = [[event touchesForView:sender] anyObject];
+    CGPoint curPoint = [touch locationInView:self];
+    if (curPoint.x < self.contentView.rightBarButtonItem.frame.origin.x) {
+        [(GRMessagesSlideView *)self.slideShimmeringView.contentView updateLocation:(curPoint.x - self.trackTouchPoint.x)];
+    }
+    self.trackTouchPoint = curPoint;
+    if ((self.firstTouchPoint.x - self.trackTouchPoint.x)>kFloatCancelRecordingOffsetX) {
+        self.isCanceling = YES;
+        [sender cancelTrackingWithEvent:event];
+        [self cancelRecord];
+    }
 }
 
--(void)_finishedRecord:(UIButton *)sender forEvent:(UIEvent *)event{
- 
+-(void)_fininshedRecord:(UIButton *)sender forEvent:(UIEvent *)event{
+    if (self.isCanceling) {
+        return;
+    }
+    if ([self.delegate respondsToSelector:@selector(grmsg_InputToolbarShouldFinishedRecord:)]) {
+        [self.delegate grmsg_InputToolbarShouldFinishedRecord:self];
+    }
+    [self endRecord];
+     self.recordBtn.hidden = YES;
+}
+
+- (void)showSlideView{
+    self.slideShimmeringView.hidden = NO;
+    CGRect frame = self.slideShimmeringView.frame;
+    CGRect orgFrame = {CGPointMake(CGRectGetMaxX(self.contentView.rightBarButtonItem.frame),CGRectGetMinY(frame)), frame.size};
+    self.slideShimmeringView.frame = orgFrame;
+    [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveLinear animations:^{
+        self.slideShimmeringView.frame = frame;
+    } completion:NULL];
+}
+- (void)showRecordImageView{
+    self.recordBtn.alpha = 1.0f;
+    self.recordBtn.hidden = NO;
+    CGRect frame = self.recordBtn.frame;
+    CGRect orgFrame = CGRectMake(CGRectGetMinX(self.contentView.rightBarButtonItem.frame), frame.origin.y, frame.size.width, frame.size.height);
+    self.recordBtn.frame = orgFrame;
+    [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveLinear animations:^{
+        self.recordBtn.frame = frame;
+    } completion:NULL];
+
+}
+- (void)showRecordImageViewGradient{
+    CABasicAnimation *basicAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    [basicAnimation setRepeatCount:INFINITY];
+    [basicAnimation setDuration:1.0f];
+    basicAnimation.autoreverses = YES;
+    basicAnimation.fromValue = [NSNumber numberWithFloat:1.0f];
+    basicAnimation.toValue = [NSNumber numberWithFloat:0.1f];
+    [self.recordBtn.layer addAnimation:basicAnimation forKey:nil];
+}
+
+- (FBShimmeringView *)slideShimmeringView{
+    if (!_slideShimmeringView) {
+        CGFloat x = (kSCREENWIDTH - 140.0f)/2;
+        _slideShimmeringView = [[FBShimmeringView alloc]initWithFrame:CGRectMake(x, self.contentView.textView.frame.origin.y, 140.0f, self.contentView.textView.frame.size.height)];
+        GRMessagesSlideView *contentView = [[GRMessagesSlideView alloc]initWithFrame:_slideShimmeringView.bounds];
+        _slideShimmeringView.contentView = contentView;
+        [self addSubview:_slideShimmeringView];
+        _slideShimmeringView.shimmeringDirection = FBShimmerDirectionLeft;
+        _slideShimmeringView.shimmeringSpeed = 60.0f;
+        _slideShimmeringView.shimmeringHighlightWidth = 0.29f;
+        _slideShimmeringView.shimmering = YES;
+    }
+    return _slideShimmeringView;
+}
+- (void)cancelRecord{
+    if ([self.delegate respondsToSelector:@selector(grmsg_InputToolbarShouldCancelRecord:)]) {
+        [self.delegate grmsg_InputToolbarShouldCancelRecord:self];
+    }
+    [self.contentView.rightBarButtonItem.layer removeAllAnimations];
+    self.slideShimmeringView.hidden = YES;
+    [self.contentView.rightBarButtonItem removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
+    CGRect orgFrame = self.contentView.rightBarButtonItem.frame;
+    if (!self.canCancelAniamtion) {
+        [self endRecord];
+        return;
+    }
+    [UIView animateWithDuration:kFloatRecordImageUpTime delay:.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        CGRect frame = self.recordBtn.frame;
+        frame.origin.y -= (1.5 * self.recordBtn.frame.size.height);
+        self.recordBtn.frame =frame;
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [self showGarbage];
+            [UIView animateWithDuration:kFloatRecordImageRotateTime delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                CGAffineTransform transform = CGAffineTransformMakeRotation(- 1* M_PI);
+                self.recordBtn.transform = transform;
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:kFloatRecordImageDownTime delay:.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                    self.recordBtn.frame = orgFrame;
+                    self.recordBtn.alpha = 0.1f;
+                } completion:^(BOOL finished) {
+                    self.recordBtn.hidden = YES;
+                    [self dismissGarbage];
+                }];
+            }];
+        }
+    }];
+}
+- (void)endRecord{
+    self.contentView.rightBarButtonItem.hidden = NO;
+    self.isCanceling = NO;
+    self.canCancelAniamtion = NO;
+    [self invalidateCountTimer];
+    if (_recordBtn) {
+        [self.recordBtn.layer removeAllAnimations];
+        [self.recordBtn removeFromSuperview];
+         self.recordBtn = nil;
+    }
+    if (_slideShimmeringView) {
+        [self.slideShimmeringView removeFromSuperview];
+        self.slideShimmeringView = nil;
+    }
+    if (_timeLabel) {
+        [self.timeLabel removeFromSuperview];
+        self.timeLabel = nil;
+    }
+    
+    if (_garbageImageView) {
+        [self.garbageImageView removeFromSuperview];
+        self.garbageImageView = nil;
+    }
+    CGRect frame = self.contentView.leftBarButtonItem.frame;
+    CGFloat offset = self.contentView.textView.frame.origin.x - frame.origin.x;
+    frame.origin.x -= 100;
+    [self.contentView.leftBarButtonItem setFrame:frame];
+    self.contentView.leftBarButtonItem.hidden = NO;
+    [self updateConstraintsIfNeeded];
+    CGRect frame2 = self.contentView.leftBarButtonItem.frame;
+    frame2.origin.x -= 100;
+    [self.contentView.leftSecondBarButtonItem setFrame:frame2];
+    self.contentView.leftSecondBarButtonItem.hidden = NO;
+    
+    CGFloat textFieldMaxX = CGRectGetMaxX(self.contentView.textView.frame);
+    self.contentView.textView.hidden = NO;
+    frame = self.contentView.frame;
+    frame.origin.x = self.contentView.leftBarButtonItem.frame.origin.x + offset;
+    frame.size.width = textFieldMaxX - frame.origin.x;
+    self.contentView.frame = frame;
+    
+    [UIView animateWithDuration:0.3f animations:^{
+        CGRect nframe = self.contentView.rightBarButtonItem.frame;
+        nframe.origin.x += 100;
+        self.contentView.rightBarButtonItem.frame = nframe;
+        CGRect lframe = self.contentView.leftSecondBarButtonItem.frame;
+        lframe.origin.x += 100;
+        [self.contentView.leftSecondBarButtonItem setFrame:lframe];
+        nframe = self.contentView.textView.frame;
+        nframe.origin.x = self.contentView.leftBarButtonItem.frame.origin.x + offset;
+        nframe.size.width = textFieldMaxX - nframe.origin.x;
+        [self.contentView.textView setFrame:nframe];
+    }];
+}
+- (void)invalidateCountTimer{
+    self.currentSeconds = 0;
+    [_countTimer invalidate];
+    self.countTimer = nil;
+}
+-(NSTimer *)countTimer{
+    if (!_countTimer) {
+        _countTimer = [NSTimer timerWithTimeInterval:1.0F target:self selector:@selector(updateRecordTimer:) userInfo:nil repeats:YES];
+    }
+    return _countTimer;
+}
+-(void)updateRecordTimer:(NSTimer *)timer{
+    self.currentSeconds++;
+    NSUInteger sec = self.currentSeconds % 60;
+    NSString *secondStr = nil;
+    if (sec < 10) {
+        secondStr = [NSString stringWithFormat:@"0%lu",(unsigned long)sec];
+    }else{
+        secondStr = [NSString stringWithFormat:@"%lu",(unsigned long)sec];
+    }
+    NSString *mins = [NSString stringWithFormat:@"%lu",self.currentSeconds/(unsigned long)60];
+    self.timeLabel.text = [NSString stringWithFormat:@"%@:%@",mins,secondStr];
+}
+- (void)startCountTimer{
+    self.currentSeconds = 0;
+    [[NSRunLoop currentRunLoop]addTimer:self.countTimer forMode:NSRunLoopCommonModes];
+    [self.countTimer fire];
+}
+- (void)didBeginRecord{
+    self.canCancelAniamtion = YES;
+    [self startCountTimer];
+    [self showRecordImageViewGradient];
+}
+-(UIButton *)recordBtn{
+    if (!_recordBtn) {
+        _recordBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+        [_recordBtn setImage:[UIImage grmsg_defaultRegularMicRecImage] forState:UIControlStateNormal];
+        [_recordBtn setTintColor:[UIColor redColor]];
+        [_recordBtn setFrame:self.contentView.leftBarButtonItem.frame];
+        [self addSubview:_recordBtn];
+    }
+    return _recordBtn;
+}
+
+-(void)dismissGarbage{
+  [UIView animateWithDuration:kFloatGarbageAnimationTime delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+      self.garbageImageView.headerView.transform = CGAffineTransformIdentity;
+      CGRect frame = self.garbageImageView.frame;
+      frame.origin.y = kFloatGarbageBeginY;
+      self.garbageImageView.frame = frame;
+  } completion:^(BOOL finished) {
+      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.01f * NSEC_PER_SEC)),dispatch_get_main_queue(),^{
+          [self endRecord];
+      });
+  }];
+}
+-(void)showGarbage{
+    [self garbageImageView];
+    [UIView animateWithDuration:kFloatGarbageAnimationTime delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        CGAffineTransform transform = CGAffineTransformMakeRotation(- 1*M_PI_2);
+        self.garbageImageView.headerView.transform = transform;
+        CGRect frame = self.garbageImageView.frame;
+        frame.origin.y = (self.bounds.size.height - frame.size.height) / 2.0f;
+        self.garbageImageView.frame = frame;
+    } completion:NULL];
+}
+-(GRMessagesGarbageView *)garbageImageView{
+    if (!_garbageImageView) {
+        GRMessagesGarbageView *garbageView = [[GRMessagesGarbageView alloc]init];
+        CGRect frame = garbageView.frame;
+        frame.origin = CGPointMake(_recordBtn.center.x - frame.size.width /2.0f, kFloatGarbageBeginY);
+        [garbageView setFrame:frame];
+        [self addSubview:garbageView];
+        _garbageImageView = garbageView;
+    }
+    return _garbageImageView;
 }
 @end

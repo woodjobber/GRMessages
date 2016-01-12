@@ -16,7 +16,9 @@
 //- (void)grmsg_InputToolbar:(GRMessagesInputToolbar *)toolbar didPressRightBarButton:(UIButton *)sender;
 - (void)grmsg_InputToolbar:(GRMessagesInputToolbar *)toolbar didPressLeftBarButton:(UIButton *)sender;
 - (void)grmsg_InputToolbar:(GRMessagesInputToolbar *)toolbar didPressLeftSecondBarButton:(UIButton *)sender;
-
+- (void)grmsg_InputToolbarShouldBeginRecord:(GRMessagesInputToolbar *)toolbar;
+- (void)grmsg_InputToolbarShouldCancelRecord:(GRMessagesInputToolbar *)toolbar;
+- (void)grmsg_InputToolbarShouldFinishedRecord:(GRMessagesInputToolbar *)toolbar;
 @end
 
 @interface GRMessagesInputToolbar : UIToolbar

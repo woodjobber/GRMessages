@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface GRMessagesGarbageView : UIView
-@property (nonatomic, strong)UIImage *arrowImage;
-@property (nonatomic, strong)NSString *text;
--(void)updateLocation:(CGFloat )offsetX;
+@property (nonatomic, strong)UIImage *bodyImage;
+@property (nonatomic, strong)UIImage *headerImage;
+@property (nonatomic, strong) UIImageView *bodyView;
+@property (nonatomic, strong) UIImageView *headerView;
 @end

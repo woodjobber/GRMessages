@@ -9,59 +9,50 @@
 #import "GRMessagesGarbageView.h"
 #import "UIImage+GRMessages.h"
 
+
+static void setViewFixedAnchorPoint(CGPoint anchorPoint, UIView *view)
+{
+    CGPoint newPoint = CGPointMake(view.bounds.size.width * anchorPoint.x, view.bounds.size.height *anchorPoint.y);
+    CGPoint oldPoint = CGPointMake(view.bounds.size.width * view.layer.anchorPoint.x, view.bounds.size.height * view.layer.anchorPoint.y);
+    newPoint = CGPointApplyAffineTransform(newPoint, view.transform);
+    oldPoint = CGPointApplyAffineTransform(oldPoint, view.transform);
+    CGPoint postion = view.layer.position;
+    postion.x -= oldPoint.x;
+    postion.y += newPoint.x;
+    
+    postion.y -= oldPoint.x;
+    postion.y += newPoint.y;
+    view.layer.position = postion;
+    view.layer.anchorPoint = anchorPoint;
+}
+
 @interface GRMessagesGarbageView ()
-@property (nonatomic, strong) UILabel *textLabel;
-@property (nonatomic, strong) UIImageView *arrowImageView;
 
 @end
 
 @implementation GRMessagesGarbageView
--(instancetype)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
+
+-(instancetype)init{
+    self = [super initWithFrame:CGRectMake(0.0f, 0.0f, 18.0f, 26.0f)];
     if (self) {
-        
+        _bodyImage = [UIImage grmsg_defaultRegularBucketBodyImage];
+        _headerImage = [UIImage grmsg_defaultRegularBucketLidImage];
+        _bodyView = [[UIImageView alloc]initWithImage:_bodyImage];
+        _headerView = [[UIImageView alloc]initWithImage:_headerImage];
+        CGRect frame = _bodyView.frame;
+        frame.origin.y = 1.0f;
+        [_bodyView setFrame:frame];
+        setViewFixedAnchorPoint(CGPointMake(0.0f, 1.0f), _headerView);
     }
     return self;
 }
--(void)_buildView{
-    self.clipsToBounds = YES;
-    
-    _textLabel = ({
-        UILabel *label = [[UILabel alloc]initWithFrame:self.bounds];
-        _text =label.text = @"Slide To Cancel";
-        label.font = [UIFont systemFontOfSize:16.0f];
-        label.textAlignment = NSTextAlignmentCenter;
-        label.backgroundColor = [UIColor clearColor];
-     
-        label;
-    });
-    
-    _arrowImageView = ({
-        _arrowImage = [UIImage grmsg_defaultRegularSlideArrowImage];
-        UIImageView *bkImageView = [[UIImageView alloc]initWithImage:_arrowImage];
-        CGRect frame = bkImageView.frame;
-        frame.origin.x = self.frame.size.width /2.0f +60.0f;
-        frame.origin.y = self.frame.size.height /2.0f - frame.size.height/2;
-        [bkImageView setFrame:frame];
-        
-        bkImageView;
-    });
-}
--(void)updateLocation:(CGFloat )offsetX{
-    
-    CGRect labelFrame = self.textLabel.frame;
-    labelFrame.origin.x += offsetX;
-    self.textLabel.frame = labelFrame;
-    CGRect imageFrame = self.arrowImageView.frame;
-    imageFrame.origin.x += offsetX;
-    self.arrowImageView.frame = imageFrame;
-}
-- (void)setArrowImage:(UIImage *)arrowImage{
-    self.arrowImageView.image = arrowImage;
+-(void)setHeaderImage:(UIImage *)headerImage{
+    _headerView.image = headerImage;
     [self setNeedsDisplay];
 }
-- (void)setText:(NSString *)text{
-    self.textLabel.text = text;
+
+-(void)setBodyImage:(UIImage *)bodyImage{
+    _bodyView.image = bodyImage;
     [self setNeedsDisplay];
 }
 @end
