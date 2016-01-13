@@ -245,10 +245,10 @@ static const CGFloat kFloatRecordImageUpTime           = 0.5f;
     if ([self.delegate respondsToSelector:@selector(grmsg_InputToolbarShouldCancelRecord:)]) {
         [self.delegate grmsg_InputToolbarShouldCancelRecord:self];
     }
-    [self.contentView.rightBarButtonItem.layer removeAllAnimations];
+    [self.recordBtn.layer removeAllAnimations];
     self.slideShimmeringView.hidden = YES;
-    [self.contentView.rightBarButtonItem removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
-    CGRect orgFrame = self.contentView.rightBarButtonItem.frame;
+    [self.recordBtn removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
+    CGRect orgFrame = self.recordBtn.frame;
     if (!self.canCancelAniamtion) {
         [self endRecord];
         return;
@@ -264,7 +264,7 @@ static const CGFloat kFloatRecordImageUpTime           = 0.5f;
                 CGAffineTransform transform = CGAffineTransformMakeRotation(- 1* M_PI);
                 self.recordBtn.transform = transform;
             } completion:^(BOOL finished) {
-                [UIView animateWithDuration:kFloatRecordImageDownTime delay:.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                [UIView animateWithDuration:kFloatRecordImageDownTime delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
                     self.recordBtn.frame = orgFrame;
                     self.recordBtn.alpha = 0.1f;
                 } completion:^(BOOL finished) {
@@ -276,7 +276,7 @@ static const CGFloat kFloatRecordImageUpTime           = 0.5f;
     }];
 }
 - (void)endRecord{
-    self.contentView.rightBarButtonItem.hidden = NO;
+    self.contentView.textView.hidden = NO;
     self.isCanceling = NO;
     self.canCancelAniamtion = NO;
     [self invalidateCountTimer];
@@ -298,6 +298,8 @@ static const CGFloat kFloatRecordImageUpTime           = 0.5f;
         [self.garbageImageView removeFromSuperview];
         self.garbageImageView = nil;
     }
+    
+    
     CGRect frame = self.contentView.leftBarButtonItem.frame;
     CGFloat offset = self.contentView.textView.frame.origin.x - frame.origin.x;
     frame.origin.x -= 100;
@@ -314,12 +316,12 @@ static const CGFloat kFloatRecordImageUpTime           = 0.5f;
     frame = self.contentView.frame;
     frame.origin.x = self.contentView.leftBarButtonItem.frame.origin.x + offset;
     frame.size.width = textFieldMaxX - frame.origin.x;
-    self.contentView.frame = frame;
+    self.contentView.textView.frame = frame;
     
     [UIView animateWithDuration:0.3f animations:^{
-        CGRect nframe = self.contentView.rightBarButtonItem.frame;
+        CGRect nframe = self.contentView.leftBarButtonItem.frame;
         nframe.origin.x += 100;
-        self.contentView.rightBarButtonItem.frame = nframe;
+        self.contentView.leftBarButtonItem.frame = nframe;
         CGRect lframe = self.contentView.leftSecondBarButtonItem.frame;
         lframe.origin.x += 100;
         [self.contentView.leftSecondBarButtonItem setFrame:lframe];

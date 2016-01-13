@@ -47,7 +47,7 @@
 
 - (NSString *)filterSpecialString{
     
-    NSCharacterSet *doNotWantString = [NSCharacterSet characterSetWithCharactersInString:@"<>![]{}\"（#%-*+=_）\\|~(＜＞$%^&*)_+ "];
+    NSCharacterSet *doNotWantString = [NSCharacterSet characterSetWithCharactersInString:@"<>![]{}\"（#%-*+=_）\\|~(＜＞$%^&*)_+ . :"];
 
     return [NSString stringWithFormat:@"%@",[[self componentsSeparatedByCharactersInSet:doNotWantString]componentsJoinedByString:@""]];
 }
