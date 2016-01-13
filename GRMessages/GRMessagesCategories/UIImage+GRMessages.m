@@ -85,6 +85,9 @@
 + (UIImage *)grmsg_defaultRegularSlideArrowImage{
     return [NSBundle grmsg_bundleImageWithImageName:@"SlideArrow"];
 }
++ (UIImage *)grmsg_fixOrientation:(UIImage *)srcImg{
+    [self grmsg_fixOrientation:srcImg];
+}
 - (UIImage *)grmsg_fixOrientation:(UIImage *)srcImg {
     if (srcImg.imageOrientation == UIImageOrientationUp) return srcImg;
     CGAffineTransform transform = CGAffineTransformIdentity;
