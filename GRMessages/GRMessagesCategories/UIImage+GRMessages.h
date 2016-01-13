@@ -12,6 +12,8 @@
 
 - (UIImage *)grmsg_imageMaskdWithColor:(UIColor *)maskColor;
 
+- (UIImage *)grmsg_fixOrientation:(UIImage *)srcImg;
+
 + (UIImage *)grmsg_readImageWithImageName:(NSString *)imageName;
 
 + (UIImage *)grmsg_bubbleRegularImage;
