@@ -7,25 +7,24 @@
 //
 
 #import "GRMessagesVideoMediaItem.h"
-#import "UIImage+GRMessages.h"
-#import "GRMessagesMediaViewBubbleImageFaker.h"
-#import "GRMessagesMediaPlaceholderView.h"
+
 
 @interface GRMessagesVideoMediaItem()
 @property (nonatomic, strong)UIImageView *cachedVideoImageView;
 @end
 @implementation GRMessagesVideoMediaItem
--(instancetype)initWithFileURL:(NSURL *)fileURL isReadyToPlay:(BOOL)isReadyToPlay{
+-(instancetype)initWithVideoObject:(NSObject *)videoObject isReadyToPlay:(BOOL)isReadyToPlay{
     if (self = [super init]) {
-        _fileURL = fileURL;
+        _videoObject = videoObject;
         _isReadyToPlay =isReadyToPlay;
         _cachedVideoImageView = nil;
+        self.appliesMediaItemType = GRMessagesMediaItemTypeVideo;
     }
     return self;
 }
 
 -(void)dealloc{
-    _fileURL = nil;
+    _videoObject = nil;
     _cachedVideoImageView = nil;
 
 }
@@ -35,8 +34,8 @@
     _cachedVideoImageView = nil;
 }
 
--(void)setFileURL:(NSURL *)fileURL{
-    _fileURL = fileURL;
+-(void)setFileObject:(NSObject *)fileURL{
+    _videoObject = fileURL;
     _cachedVideoImageView = nil;
 }
 
@@ -50,14 +49,17 @@
     [super setAppliesMediaViewFakeActionType:appliesMediaViewFakeActionType];
     _cachedVideoImageView = nil;
 }
-
+-(void)setAppliesMediaItemType:(GRMessagesMediaItemType)appliesMediaItemType{
+    [super setAppliesMediaItemType:appliesMediaItemType];
+    _cachedVideoImageView = nil;
+}
 
 - (NSUInteger)mediaHash{
     return self.hash;
 }
 
 -(UIView *)mediaView{
-    if (self.fileURL == nil || self.isReadyToPlay) {
+    if (self.videoObject == nil || self.isReadyToPlay) {
         return nil;
     }
     if (self.cachedVideoImageView == nil) {
@@ -72,22 +74,22 @@
         self.cachedVideoImageView = imageView;
     }
     return self.cachedVideoImageView;
-    
 }
 
 - (BOOL)isEqual:(id)object{
     if (![super isEqual:object]) {
         return NO;
     }
+    
     GRMessagesVideoMediaItem *item = (GRMessagesVideoMediaItem *)object;
-    return [self.fileURL isEqual:item.fileURL] && self.isReadyToPlay == item.isReadyToPlay;
+    return [self.videoObject isEqual:item.videoObject] && self.isReadyToPlay == item.isReadyToPlay;
 }
 -(NSUInteger)hash{
-    return super.hash^self.fileURL.hash;
+    return super.hash^self.videoObject.hash;
 }
 
 -(id)copyWithZone:(NSZone *)zone{
-    GRMessagesVideoMediaItem *copy = [[[self class] allocWithZone:zone] initWithFileURL:self.fileURL isReadyToPlay:self.isReadyToPlay];
+    GRMessagesVideoMediaItem *copy = [[[self class] allocWithZone:zone] initWithVideoObject:self.videoObject isReadyToPlay:self.isReadyToPlay];
     copy.appliesMediaViewFakeActionType = self.appliesMediaViewFakeActionType;
     return copy;
 }

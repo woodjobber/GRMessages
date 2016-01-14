@@ -8,6 +8,13 @@
 
 #import "GRMessagesMediaItem.h"
 
-@interface GRMessagesAudioMedialtem : GRMessagesMediaItem <NSCopying,NSCoding,GRMessagesMediaData>
+@interface GRMessagesAudioMedialtem : GRMessagesMediaItem
+
+@property (nonatomic, strong)NSObject* audioObject;
+
+@property (nonatomic, assign)BOOL isReadyToPlay;
+
+- (instancetype)initWithAudioObject:(NSObject *)audioObject isReadyToPlay:(BOOL)isReadyToPlay;
+
 
 @end

@@ -7,7 +7,17 @@
 //
 
 #import "GRMessagesMediaItem.h"
+#import <MapKit/MapKit.h>
+typedef void (^GRMessagesMediaItemCompletionBlock)(void);
+@interface GRMessagesLocationMediaItem : GRMessagesMediaItem <MKAnnotation>
 
-@interface GRMessagesLocationMediaItem : GRMessagesMediaItem <NSCopying,NSCoding,GRMessagesMediaData>
+@property (copy , nonatomic)CLLocation *location;
+@property (nonatomic,readonly) CLLocationCoordinate2D coordinate;
+-(instancetype)initWithLocation:(CLLocation *)location;
+-(void)setLocation:(CLLocation *)location withCompletionHandler:(GRMessagesMediaItemCompletionBlock)completionBlock;
+-(void)setLocation:(CLLocation *)location
+            region:(MKCoordinateRegion)region
+withCompletionHandler:(GRMessagesMediaItemCompletionBlock)completionBlock;
+
 
 @end

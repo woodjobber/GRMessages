@@ -58,6 +58,12 @@
 + (UIImage *)grmsg_defaultPlayImage{
     return [NSBundle grmsg_bundleImageWithImageName:@"play"];
 }
++ (UIImage *)grmsg_defaultFileImage{
+    return [NSBundle grmsg_bundleImageWithImageName:@"file"];
+}
++ (UIImage *)grmsg_defaultAudioImage{
+    return [NSBundle grmsg_bundleImageWithImageName:@"audio"];
+}
 + (UIImage *)grmsg_defaultRegularBucketBodyImage{
     return [NSBundle grmsg_bundleImageWithImageName:@"BucketBodyTemplate"];
 }

@@ -36,6 +36,10 @@
 
 + (UIImage *)grmsg_defaultPlayImage;
 
++ (UIImage *)grmsg_defaultFileImage;
+
++ (UIImage *)grmsg_defaultAudioImage;
+
 + (UIImage *)grmsg_defaultRegularBucketBodyImage;
 
 + (UIImage *)grmsg_defaultRegularBucketLidImage;

@@ -10,10 +10,10 @@
 
 @interface GRMessagesVideoMediaItem : GRMessagesMediaItem
 
-@property (nonatomic ,strong) NSURL *fileURL;
+@property (nonatomic ,strong) NSObject *videoObject;
 
 @property (nonatomic ,assign) BOOL isReadyToPlay;
 
-- (instancetype)initWithFileURL:(NSURL *)fileURL isReadyToPlay:(BOOL)isReadyToPlay;
+- (instancetype)initWithVideoObject:(NSObject *)videoObject isReadyToPlay:(BOOL)isReadyToPlay;
 
 @end

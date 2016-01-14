@@ -8,7 +8,6 @@
 
 #import "GRMessagesMediaItem.h"
 #import <objc/runtime.h>
-#import "GRMessagesMediaPlaceholderView.h"
 
 #define SuppressPerformSelectorLeakWarning(Stuff) \
 do { \
@@ -61,7 +60,10 @@ static NSArray *GetIvarList(Class cls)
     _cachedPlaceholderView = nil;
 }
 
-
+-(void)setAppliesMediaItemType:(GRMessagesMediaItemType)appliesMediaItemType{
+    _appliesMediaItemType = appliesMediaItemType;
+    _cachedPlaceholderView = nil;
+}
 
 - (void)didReceiveMemoryWarningNotification:(NSNotification *)notification{
     [self clearCacheMediaViews];
@@ -70,8 +72,6 @@ static NSArray *GetIvarList(Class cls)
     _cachedPlaceholderView = nil;
 }
 
-
-
 - (UIView *)mediaView{
     NSAssert(NO, @"Error! required method not implemented in subclass. Need to implement %s",__PRETTY_FUNCTION__);
     return nil;
@@ -79,13 +79,19 @@ static NSArray *GetIvarList(Class cls)
 
 - (CGSize)mediaViewDisplaySize{
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-        if (self.appliesMediaViewFakeActionType == GRMessagesMediaItemTypeFile) {
-            return CGSizeMake(315.0f, 115.0f);
+        if (self.appliesMediaItemType == GRMessagesMediaItemTypeFile) {
+            return CGSizeMake(315.0f, 85.0f);
+        }else if (self.appliesMediaItemType == GRMessagesMediaItemTypeAudio){
+            return CGSizeMake(100.0f, 40.0f);
         }
+        
         return CGSizeMake(315.0f, 225.0f);
     }
-    if (self.appliesMediaViewFakeActionType == GRMessagesMediaItemTypeFile) {
+    
+    if (self.appliesMediaItemType == GRMessagesMediaItemTypeFile) {
         return CGSizeMake(210.0f, 85.0f);
+    }else if (self.appliesMediaItemType == GRMessagesMediaItemTypeAudio){
+        return CGSizeMake(100.0f, 40.0f);
     }
     return CGSizeMake(210.0f, 150.0f);
     

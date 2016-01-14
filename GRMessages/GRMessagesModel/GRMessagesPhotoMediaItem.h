@@ -8,6 +8,8 @@
 
 #import "GRMessagesMediaItem.h"
 
-@interface GRMessagesPhotoMediaItem : GRMessagesMediaItem <NSCopying,NSCoding,GRMessagesMediaData>
+@interface GRMessagesPhotoMediaItem : GRMessagesMediaItem 
+@property (copy,nonatomic) UIImage *image;
 
+- (instancetype)initWithImage:(UIImage *)image;
 @end
