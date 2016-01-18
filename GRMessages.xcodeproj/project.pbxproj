@@ -49,6 +49,17 @@
 		7CDD823C1C45E9D10059D2EA /* GRMessagesMediaViewBubbleImageFaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD823B1C45E9D10059D2EA /* GRMessagesMediaViewBubbleImageFaker.m */; };
 		7CDD823F1C45E9F10059D2EA /* GRMessagesTimestampFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD823E1C45E9F10059D2EA /* GRMessagesTimestampFormatter.m */; };
 		7CDD82471C45F4F60059D2EA /* GRMessagesCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD82461C45F4F60059D2EA /* GRMessagesCollectionView.m */; };
+		7CDED0481C4CD54D004059BA /* GRMessagesLoadEarlierHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDED0471C4CD54D004059BA /* GRMessagesLoadEarlierHeaderView.m */; };
+		7CDED04A1C4CD570004059BA /* GRMessagesLoadEarlierHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CDED0491C4CD570004059BA /* GRMessagesLoadEarlierHeaderView.xib */; };
+		7CDED04C1C4CDD82004059BA /* GRMessagesIndicatorIncomingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CDED04B1C4CDD82004059BA /* GRMessagesIndicatorIncomingView.xib */; };
+		7CDED04F1C4CDE0E004059BA /* GRMessagesIndicatorIncomingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDED04E1C4CDE0E004059BA /* GRMessagesIndicatorIncomingView.m */; };
+		7CDED0521C4CDED3004059BA /* GRMessagesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDED0511C4CDED3004059BA /* GRMessagesCollectionViewCell.m */; };
+		7CDED0561C4CE331004059BA /* GRMessagesCollectionViewCellIncoming.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDED0541C4CE331004059BA /* GRMessagesCollectionViewCellIncoming.m */; };
+		7CDED05B1C4CE348004059BA /* GRMessagesCollectionViewCellOutgoing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDED0591C4CE348004059BA /* GRMessagesCollectionViewCellOutgoing.m */; };
+		7CDED05F1C4CE3CC004059BA /* GRMessagesLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDED05E1C4CE3CC004059BA /* GRMessagesLabel.m */; };
+		7CDED0621C4CE417004059BA /* GRMessagesCellTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDED0611C4CE417004059BA /* GRMessagesCellTextView.m */; };
+		7CDED0641C4CEC4B004059BA /* GRMessagesCollectionViewCellIncoming.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CDED0631C4CEC4B004059BA /* GRMessagesCollectionViewCellIncoming.xib */; };
+		7CDED0661C4CEC65004059BA /* GRMessagesCollectionCellOutgoing.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CDED0651C4CEC65004059BA /* GRMessagesCollectionCellOutgoing.xib */; };
 		7CE7B81E1C3A87CD003A072B /* NSUserDefaults+GRMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE7B81D1C3A87CD003A072B /* NSUserDefaults+GRMessages.m */; };
 		7CE7B8211C3A880A003A072B /* GRMessagsAudioServicesPlaySystemSound+GRMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE7B8201C3A880A003A072B /* GRMessagsAudioServicesPlaySystemSound+GRMessages.m */; };
 		7CEF62C31C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CEF62C21C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.m */; };
@@ -147,6 +158,25 @@
 		7CDD82431C45F2AD0059D2EA /* GRMessagesData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesData.h; sourceTree = "<group>"; };
 		7CDD82451C45F4F60059D2EA /* GRMessagesCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesCollectionView.h; sourceTree = "<group>"; };
 		7CDD82461C45F4F60059D2EA /* GRMessagesCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesCollectionView.m; sourceTree = "<group>"; };
+		7CDED0451C4CD3E8004059BA /* GRMessagesCollectionViewDelegateFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesCollectionViewDelegateFlowLayout.h; sourceTree = "<group>"; };
+		7CDED0461C4CD54D004059BA /* GRMessagesLoadEarlierHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesLoadEarlierHeaderView.h; sourceTree = "<group>"; };
+		7CDED0471C4CD54D004059BA /* GRMessagesLoadEarlierHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesLoadEarlierHeaderView.m; sourceTree = "<group>"; };
+		7CDED0491C4CD570004059BA /* GRMessagesLoadEarlierHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRMessagesLoadEarlierHeaderView.xib; sourceTree = "<group>"; };
+		7CDED04B1C4CDD82004059BA /* GRMessagesIndicatorIncomingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRMessagesIndicatorIncomingView.xib; sourceTree = "<group>"; };
+		7CDED04D1C4CDE0E004059BA /* GRMessagesIndicatorIncomingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesIndicatorIncomingView.h; sourceTree = "<group>"; };
+		7CDED04E1C4CDE0E004059BA /* GRMessagesIndicatorIncomingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesIndicatorIncomingView.m; sourceTree = "<group>"; };
+		7CDED0501C4CDED3004059BA /* GRMessagesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesCollectionViewCell.h; sourceTree = "<group>"; };
+		7CDED0511C4CDED3004059BA /* GRMessagesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesCollectionViewCell.m; sourceTree = "<group>"; };
+		7CDED0531C4CE331004059BA /* GRMessagesCollectionViewCellIncoming.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesCollectionViewCellIncoming.h; sourceTree = "<group>"; };
+		7CDED0541C4CE331004059BA /* GRMessagesCollectionViewCellIncoming.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesCollectionViewCellIncoming.m; sourceTree = "<group>"; };
+		7CDED0581C4CE348004059BA /* GRMessagesCollectionViewCellOutgoing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesCollectionViewCellOutgoing.h; sourceTree = "<group>"; };
+		7CDED0591C4CE348004059BA /* GRMessagesCollectionViewCellOutgoing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesCollectionViewCellOutgoing.m; sourceTree = "<group>"; };
+		7CDED05D1C4CE3CC004059BA /* GRMessagesLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesLabel.h; sourceTree = "<group>"; };
+		7CDED05E1C4CE3CC004059BA /* GRMessagesLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesLabel.m; sourceTree = "<group>"; };
+		7CDED0601C4CE417004059BA /* GRMessagesCellTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesCellTextView.h; sourceTree = "<group>"; };
+		7CDED0611C4CE417004059BA /* GRMessagesCellTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesCellTextView.m; sourceTree = "<group>"; };
+		7CDED0631C4CEC4B004059BA /* GRMessagesCollectionViewCellIncoming.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRMessagesCollectionViewCellIncoming.xib; sourceTree = "<group>"; };
+		7CDED0651C4CEC65004059BA /* GRMessagesCollectionCellOutgoing.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRMessagesCollectionCellOutgoing.xib; sourceTree = "<group>"; };
 		7CE7B81C1C3A87CD003A072B /* NSUserDefaults+GRMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+GRMessages.h"; sourceTree = "<group>"; };
 		7CE7B81D1C3A87CD003A072B /* NSUserDefaults+GRMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+GRMessages.m"; sourceTree = "<group>"; };
 		7CE7B81F1C3A880A003A072B /* GRMessagsAudioServicesPlaySystemSound+GRMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GRMessagsAudioServicesPlaySystemSound+GRMessages.h"; sourceTree = "<group>"; };
@@ -314,6 +344,7 @@
 				7CDD82401C45F1AA0059D2EA /* GRMessagesAvatarImageDataSource.h */,
 				7CDD82411C45F1D30059D2EA /* GRMessagesBubbleImageDataSource.h */,
 				7CDD82421C45F1FE0059D2EA /* GRMessagesCollectionViewDataSource.h */,
+				7CDED0451C4CD3E8004059BA /* GRMessagesCollectionViewDelegateFlowLayout.h */,
 				7CDD82431C45F2AD0059D2EA /* GRMessagesData.h */,
 				7C9639361C460F2600BA3511 /* GRMessagesMediaData.h */,
 				7C9639121C45F5D200BA3511 /* GRMessasgesAvatarImage.h */,
@@ -367,6 +398,24 @@
 				7CDD82461C45F4F60059D2EA /* GRMessagesCollectionView.m */,
 				7CA444BE1C4644FD0052905B /* GRMessagesMediaPlaceholderView.h */,
 				7CA444BF1C4644FD0052905B /* GRMessagesMediaPlaceholderView.m */,
+				7CDED0461C4CD54D004059BA /* GRMessagesLoadEarlierHeaderView.h */,
+				7CDED0471C4CD54D004059BA /* GRMessagesLoadEarlierHeaderView.m */,
+				7CDED0491C4CD570004059BA /* GRMessagesLoadEarlierHeaderView.xib */,
+				7CDED04D1C4CDE0E004059BA /* GRMessagesIndicatorIncomingView.h */,
+				7CDED04E1C4CDE0E004059BA /* GRMessagesIndicatorIncomingView.m */,
+				7CDED04B1C4CDD82004059BA /* GRMessagesIndicatorIncomingView.xib */,
+				7CDED0501C4CDED3004059BA /* GRMessagesCollectionViewCell.h */,
+				7CDED0511C4CDED3004059BA /* GRMessagesCollectionViewCell.m */,
+				7CDED0531C4CE331004059BA /* GRMessagesCollectionViewCellIncoming.h */,
+				7CDED0541C4CE331004059BA /* GRMessagesCollectionViewCellIncoming.m */,
+				7CDED0631C4CEC4B004059BA /* GRMessagesCollectionViewCellIncoming.xib */,
+				7CDED0581C4CE348004059BA /* GRMessagesCollectionViewCellOutgoing.h */,
+				7CDED0591C4CE348004059BA /* GRMessagesCollectionViewCellOutgoing.m */,
+				7CDED0651C4CEC65004059BA /* GRMessagesCollectionCellOutgoing.xib */,
+				7CDED05D1C4CE3CC004059BA /* GRMessagesLabel.h */,
+				7CDED05E1C4CE3CC004059BA /* GRMessagesLabel.m */,
+				7CDED0601C4CE417004059BA /* GRMessagesCellTextView.h */,
+				7CDED0611C4CE417004059BA /* GRMessagesCellTextView.m */,
 			);
 			path = GRMessagesViews;
 			sourceTree = "<group>";
@@ -482,7 +531,11 @@
 				7C2539051C33C9B200C69A89 /* GRMessagesInputToolbarContentView.xib in Resources */,
 				7C2538F81C33B82F00C69A89 /* GRMessagesViewController.xib in Resources */,
 				7C2538BB1C3370CE00C69A89 /* LaunchScreen.storyboard in Resources */,
+				7CDED04A1C4CD570004059BA /* GRMessagesLoadEarlierHeaderView.xib in Resources */,
 				7CB853F61C3B67FC00BE417F /* GRMessagesAssets.bundle in Resources */,
+				7CDED0641C4CEC4B004059BA /* GRMessagesCollectionViewCellIncoming.xib in Resources */,
+				7CDED0661C4CEC65004059BA /* GRMessagesCollectionCellOutgoing.xib in Resources */,
+				7CDED04C1C4CDD82004059BA /* GRMessagesIndicatorIncomingView.xib in Resources */,
 				7C2538B81C3370CE00C69A89 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,9 +550,13 @@
 				7C96391A1C46036100BA3511 /* GRMessagesImage.m in Sources */,
 				7CDD82241C439D4A0059D2EA /* GRMessagesInputToolbarButtonFactroy.m in Sources */,
 				7C2538EE1C3383EF00C69A89 /* pinyin.c in Sources */,
+				7CDED0521C4CDED3004059BA /* GRMessagesCollectionViewCell.m in Sources */,
 				7C9639201C4607E200BA3511 /* GRMessage.m in Sources */,
 				7CDD82361C45E9430059D2EA /* GRMessagesAvatarImageFactory.m in Sources */,
 				7CE7B8211C3A880A003A072B /* GRMessagsAudioServicesPlaySystemSound+GRMessages.m in Sources */,
+				7CDED05B1C4CE348004059BA /* GRMessagesCollectionViewCellOutgoing.m in Sources */,
+				7CDED0481C4CD54D004059BA /* GRMessagesLoadEarlierHeaderView.m in Sources */,
+				7CDED04F1C4CDE0E004059BA /* GRMessagesIndicatorIncomingView.m in Sources */,
 				7CDD823C1C45E9D10059D2EA /* GRMessagesMediaViewBubbleImageFaker.m in Sources */,
 				7CDD82471C45F4F60059D2EA /* GRMessagesCollectionView.m in Sources */,
 				7C9639171C45FCC200BA3511 /* GRMessagesBubbleImage.m in Sources */,
@@ -512,6 +569,7 @@
 				7C9639321C460E1100BA3511 /* GRMessagesLocationMediaItem.m in Sources */,
 				7CB853F91C3B941D00BE417F /* UIImage+GRMessages.m in Sources */,
 				7CDD82271C43B7EB0059D2EA /* GRMessagesSlideView.m in Sources */,
+				7CDED0621C4CE417004059BA /* GRMessagesCellTextView.m in Sources */,
 				7C9639141C45F5D200BA3511 /* GRMessasgesAvatarImage.m in Sources */,
 				7C2538AD1C3370CE00C69A89 /* main.m in Sources */,
 				7CB853AE1C3A9F4500BE417F /* NSBundle+GRMessages.m in Sources */,
@@ -524,6 +582,7 @@
 				7C96392C1C460DC100BA3511 /* GRMessagesVideoMediaItem.m in Sources */,
 				7C2538F71C33B82F00C69A89 /* GRMessagesViewController.m in Sources */,
 				7C2538E11C33825600C69A89 /* DemoGRMessagesViewController.m in Sources */,
+				7CDED0561C4CE331004059BA /* GRMessagesCollectionViewCellIncoming.m in Sources */,
 				7CDD82321C44DAE80059D2EA /* FBShimmeringView.m in Sources */,
 				7CDD823F1C45E9F10059D2EA /* GRMessagesTimestampFormatter.m in Sources */,
 				7C2538E91C3383DF00C69A89 /* NSString+Extensions.m in Sources */,
@@ -532,6 +591,7 @@
 				7C9639261C460D5E00BA3511 /* GRMessagesMediaItem.m in Sources */,
 				7CA444C01C4644FD0052905B /* GRMessagesMediaPlaceholderView.m in Sources */,
 				7CDD82391C45E95C0059D2EA /* GRMessagesBubbleImageFactory.m in Sources */,
+				7CDED05F1C4CE3CC004059BA /* GRMessagesLabel.m in Sources */,
 				7C07BBAC1C33DC440060404A /* GRMessagesTextView.m in Sources */,
 				7C2538FB1C33B98F00C69A89 /* GRMessagesInputToolbar.m in Sources */,
 			);

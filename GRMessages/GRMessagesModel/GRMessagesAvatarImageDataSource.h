@@ -10,6 +10,12 @@
 #import <UIKit/UIKit.h>
 
 @protocol GRMessagesAvatarImageDataSource <NSObject>
+@required
 
+- (UIImage *)avatarImage;
+
+- (UIImage *)avatarHighlightedImage;
+
+- (UIImage *)avatarPlaceholderImage;
 
 @end

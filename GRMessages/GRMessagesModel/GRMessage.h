@@ -20,11 +20,12 @@
 
 @property (copy, nonatomic, readonly) NSString *text;
 
-@property (assign,nonatomic, readonly)BOOL isMediaMessage;
+@property (assign,nonatomic, readonly) BOOL isMediaMessage;
 
 @property (copy, nonatomic, readonly) id<GRMessagesMediaData>media;
 
 @property (copy, nonatomic, readonly) NSString *timestamp;
+
 
 + (instancetype)messageWithSenderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date text:(NSString *)text;
 - (instancetype)initWithSenderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date text:(NSString *)text;

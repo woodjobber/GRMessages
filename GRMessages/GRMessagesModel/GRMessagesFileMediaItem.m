@@ -71,7 +71,7 @@
         [GRMessagesMediaViewBubbleImageFaker configureBubbleImageFakeToMediaView:imageView ActionType:self.appliesMediaViewFakeActionType];
         self.cachedFileImageView = imageView;
     }
-    
+
     return self.cachedFileImageView;
 }
 

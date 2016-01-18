@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GRMessagesCollectionViewFlowLayout.h"
 
 @interface GRMessagesCollectionViewFlowLayout : UICollectionViewFlowLayout
 

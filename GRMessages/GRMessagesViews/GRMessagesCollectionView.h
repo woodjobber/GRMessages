@@ -7,6 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GRMessagesCollectionViewDataSource.h"
+#import "GRMessagesCollectionViewDelegateFlowLayout.h"
+#import "GRMessagesCollectionViewFlowLayout.h"
+#import "GRMessagesCollectionViewCell.h"
+
+@class GRMessagesIndicatorIncomingView;
+@class GRMessagesLoadEarlierHeaderView;
 
 @interface GRMessagesCollectionView : UICollectionView
 
