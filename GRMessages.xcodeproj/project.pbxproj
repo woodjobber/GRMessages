@@ -59,7 +59,7 @@
 		7CDED05F1C4CE3CC004059BA /* GRMessagesLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDED05E1C4CE3CC004059BA /* GRMessagesLabel.m */; };
 		7CDED0621C4CE417004059BA /* GRMessagesCellTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDED0611C4CE417004059BA /* GRMessagesCellTextView.m */; };
 		7CDED0641C4CEC4B004059BA /* GRMessagesCollectionViewCellIncoming.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CDED0631C4CEC4B004059BA /* GRMessagesCollectionViewCellIncoming.xib */; };
-		7CDED0661C4CEC65004059BA /* GRMessagesCollectionCellOutgoing.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CDED0651C4CEC65004059BA /* GRMessagesCollectionCellOutgoing.xib */; };
+		7CDED0661C4CEC65004059BA /* GRMessagesCollectionViewCellOutgoing.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CDED0651C4CEC65004059BA /* GRMessagesCollectionViewCellOutgoing.xib */; };
 		7CE7B81E1C3A87CD003A072B /* NSUserDefaults+GRMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE7B81D1C3A87CD003A072B /* NSUserDefaults+GRMessages.m */; };
 		7CE7B8211C3A880A003A072B /* GRMessagsAudioServicesPlaySystemSound+GRMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE7B8201C3A880A003A072B /* GRMessagsAudioServicesPlaySystemSound+GRMessages.m */; };
 		7CEF62C31C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CEF62C21C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.m */; };
@@ -176,7 +176,7 @@
 		7CDED0601C4CE417004059BA /* GRMessagesCellTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesCellTextView.h; sourceTree = "<group>"; };
 		7CDED0611C4CE417004059BA /* GRMessagesCellTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesCellTextView.m; sourceTree = "<group>"; };
 		7CDED0631C4CEC4B004059BA /* GRMessagesCollectionViewCellIncoming.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRMessagesCollectionViewCellIncoming.xib; sourceTree = "<group>"; };
-		7CDED0651C4CEC65004059BA /* GRMessagesCollectionCellOutgoing.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRMessagesCollectionCellOutgoing.xib; sourceTree = "<group>"; };
+		7CDED0651C4CEC65004059BA /* GRMessagesCollectionViewCellOutgoing.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRMessagesCollectionViewCellOutgoing.xib; sourceTree = "<group>"; };
 		7CE7B81C1C3A87CD003A072B /* NSUserDefaults+GRMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+GRMessages.h"; sourceTree = "<group>"; };
 		7CE7B81D1C3A87CD003A072B /* NSUserDefaults+GRMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+GRMessages.m"; sourceTree = "<group>"; };
 		7CE7B81F1C3A880A003A072B /* GRMessagsAudioServicesPlaySystemSound+GRMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GRMessagsAudioServicesPlaySystemSound+GRMessages.h"; sourceTree = "<group>"; };
@@ -411,7 +411,7 @@
 				7CDED0631C4CEC4B004059BA /* GRMessagesCollectionViewCellIncoming.xib */,
 				7CDED0581C4CE348004059BA /* GRMessagesCollectionViewCellOutgoing.h */,
 				7CDED0591C4CE348004059BA /* GRMessagesCollectionViewCellOutgoing.m */,
-				7CDED0651C4CEC65004059BA /* GRMessagesCollectionCellOutgoing.xib */,
+				7CDED0651C4CEC65004059BA /* GRMessagesCollectionViewCellOutgoing.xib */,
 				7CDED05D1C4CE3CC004059BA /* GRMessagesLabel.h */,
 				7CDED05E1C4CE3CC004059BA /* GRMessagesLabel.m */,
 				7CDED0601C4CE417004059BA /* GRMessagesCellTextView.h */,
@@ -534,7 +534,7 @@
 				7CDED04A1C4CD570004059BA /* GRMessagesLoadEarlierHeaderView.xib in Resources */,
 				7CB853F61C3B67FC00BE417F /* GRMessagesAssets.bundle in Resources */,
 				7CDED0641C4CEC4B004059BA /* GRMessagesCollectionViewCellIncoming.xib in Resources */,
-				7CDED0661C4CEC65004059BA /* GRMessagesCollectionCellOutgoing.xib in Resources */,
+				7CDED0661C4CEC65004059BA /* GRMessagesCollectionViewCellOutgoing.xib in Resources */,
 				7CDED04C1C4CDD82004059BA /* GRMessagesIndicatorIncomingView.xib in Resources */,
 				7C2538B81C3370CE00C69A89 /* Assets.xcassets in Resources */,
 			);

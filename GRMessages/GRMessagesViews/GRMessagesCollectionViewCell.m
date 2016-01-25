@@ -26,8 +26,25 @@
 @property (weak, nonatomic, readwrite) IBOutlet UIView *avatarContainerView;
 
 
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageBubbleContainerWidthConstraint;
+
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewTopVericalSpaceConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewBottomVerticalSpaceConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewAvatarHorizontalSpaceConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewMarginHorizontalSpaceConstraint;
+
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cellTopLabelHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageBubbleTopLabelHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cellBottomLabelHeightConstraint;
+
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewWidthConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewHeighConstraint;
+
+
 
 @end
 
