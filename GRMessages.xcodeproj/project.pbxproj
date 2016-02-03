@@ -23,6 +23,9 @@
 		7C2538FE1C33C6D500C69A89 /* GRMessagesCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2538FD1C33C6D500C69A89 /* GRMessagesCollectionViewFlowLayout.m */; };
 		7C2539011C33C94900C69A89 /* GRMessagesInputToolbarContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2539001C33C94900C69A89 /* GRMessagesInputToolbarContentView.m */; };
 		7C2539051C33C9B200C69A89 /* GRMessagesInputToolbarContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2539041C33C9B200C69A89 /* GRMessagesInputToolbarContentView.xib */; };
+		7C2700721C59B46600F50470 /* UIImage+Thumbanail.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2700711C59B46600F50470 /* UIImage+Thumbanail.m */; };
+		7C2700741C59B4E400F50470 /* SaveImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2700731C59B4E400F50470 /* SaveImage.m */; };
+		7C2700771C59B50E00F50470 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2700761C59B50E00F50470 /* libsqlite3.0.tbd */; };
 		7C9639141C45F5D200BA3511 /* GRMessasgesAvatarImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9639131C45F5D200BA3511 /* GRMessasgesAvatarImage.m */; };
 		7C9639171C45FCC200BA3511 /* GRMessagesBubbleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9639161C45FCC200BA3511 /* GRMessagesBubbleImage.m */; };
 		7C96391A1C46036100BA3511 /* GRMessagesImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9639191C46036100BA3511 /* GRMessagesImage.m */; };
@@ -99,6 +102,11 @@
 		7C2538FF1C33C94900C69A89 /* GRMessagesInputToolbarContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesInputToolbarContentView.h; sourceTree = "<group>"; };
 		7C2539001C33C94900C69A89 /* GRMessagesInputToolbarContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessagesInputToolbarContentView.m; sourceTree = "<group>"; };
 		7C2539041C33C9B200C69A89 /* GRMessagesInputToolbarContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRMessagesInputToolbarContentView.xib; sourceTree = "<group>"; };
+		7C2700701C59B45F00F50470 /* UIImage+Thumbanail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Thumbanail.h"; sourceTree = "<group>"; };
+		7C2700711C59B46600F50470 /* UIImage+Thumbanail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Thumbanail.m"; sourceTree = "<group>"; };
+		7C2700731C59B4E400F50470 /* SaveImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SaveImage.m; path = pinyin/SaveImage.m; sourceTree = "<group>"; };
+		7C2700751C59B4EB00F50470 /* SaveImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveImage.h; sourceTree = "<group>"; };
+		7C2700761C59B50E00F50470 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		7C9639121C45F5D200BA3511 /* GRMessasgesAvatarImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessasgesAvatarImage.h; sourceTree = "<group>"; };
 		7C9639131C45F5D200BA3511 /* GRMessasgesAvatarImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMessasgesAvatarImage.m; sourceTree = "<group>"; };
 		7C9639151C45FCC200BA3511 /* GRMessagesBubbleImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMessagesBubbleImage.h; sourceTree = "<group>"; };
@@ -193,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C2700771C59B50E00F50470 /* libsqlite3.0.tbd in Frameworks */,
 				7CEF62CA1C3A1152009D9F9D /* AudioToolbox.framework in Frameworks */,
 				7CEF62C81C3A113C009D9F9D /* Foundation.framework in Frameworks */,
 				7CEF62C61C3A112B009D9F9D /* UIKit.framework in Frameworks */,
@@ -253,6 +262,8 @@
 				7C2538E31C3383DF00C69A89 /* Nsstring+Extensions */,
 				7C2538E61C3383DF00C69A89 /* UIColor+Hex */,
 				7C07BBAD1C352D970060404A /* UIView+InputToolbarContentViewLayoutEdge.h */,
+				7C2700701C59B45F00F50470 /* UIImage+Thumbanail.h */,
+				7C2700711C59B46600F50470 /* UIImage+Thumbanail.m */,
 				7C07BBAE1C352D970060404A /* UIView+InputToolbarContentViewLayoutEdge.m */,
 				7CE7B81C1C3A87CD003A072B /* NSUserDefaults+GRMessages.h */,
 				7CE7B81D1C3A87CD003A072B /* NSUserDefaults+GRMessages.m */,
@@ -276,6 +287,8 @@
 				7CDD822B1C44DAE80059D2EA /* FBShimmering */,
 				7C2538EB1C3383EF00C69A89 /* pinyin */,
 				7C2538E21C3382E500C69A89 /* Singleton.h */,
+				7C2700751C59B4EB00F50470 /* SaveImage.h */,
+				7C2700731C59B4E400F50470 /* SaveImage.m */,
 				7CEF62C11C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.h */,
 				7CEF62C21C3A10C4009D9F9D /* GRMessagsAudioServicesPlaySystemSound.m */,
 				7CDD82331C44EBEF0059D2EA /* GRMessagesMacro.h */,
@@ -462,6 +475,7 @@
 		7CEF62C41C3A1102009D9F9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7C2700761C59B50E00F50470 /* libsqlite3.0.tbd */,
 				7CEF62C91C3A1152009D9F9D /* AudioToolbox.framework */,
 				7CEF62C71C3A113C009D9F9D /* Foundation.framework */,
 				7CEF62C51C3A112B009D9F9D /* UIKit.framework */,
@@ -547,6 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C2700721C59B46600F50470 /* UIImage+Thumbanail.m in Sources */,
 				7C96391A1C46036100BA3511 /* GRMessagesImage.m in Sources */,
 				7CDD82241C439D4A0059D2EA /* GRMessagesInputToolbarButtonFactroy.m in Sources */,
 				7C2538EE1C3383EF00C69A89 /* pinyin.c in Sources */,
@@ -563,6 +578,7 @@
 				7C2538DA1C33797600C69A89 /* AppDelegate.m in Sources */,
 				7C2539011C33C94900C69A89 /* GRMessagesInputToolbarContentView.m in Sources */,
 				7C2538EA1C3383DF00C69A89 /* UIColor+Hex.m in Sources */,
+				7C2700741C59B4E400F50470 /* SaveImage.m in Sources */,
 				7C96392F1C460DE500BA3511 /* GRMessagesAudioMedialtem.m in Sources */,
 				7CE7B81E1C3A87CD003A072B /* NSUserDefaults+GRMessages.m in Sources */,
 				7CB853FC1C3BA9CD00BE417F /* UIColor+GRMessages.m in Sources */,

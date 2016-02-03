@@ -45,7 +45,7 @@
                         <rect key="frame" x="40" y="41" width="250" height="94"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTg-RT-b6J" customClass="GRMessagesCellTextView">
-                                <rect key="frame" x="0.0" y="0.0" width="250" height="33"/>
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="94"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -61,16 +61,16 @@
                             <constraint firstItem="lTg-RT-b6J" firstAttribute="leading" secondItem="FJw-UQ-mQc" secondAttribute="leading" id="O45-73-wrr"/>
                             <constraint firstItem="lZA-KP-LIq" firstAttribute="leading" secondItem="FJw-UQ-mQc" secondAttribute="leading" id="S3W-tp-aWY"/>
                             <constraint firstItem="lTg-RT-b6J" firstAttribute="top" secondItem="FJw-UQ-mQc" secondAttribute="top" id="YAG-aW-VK3"/>
-                            <constraint firstAttribute="bottom" secondItem="lTg-RT-b6J" secondAttribute="bottom" constant="61" id="gLW-cF-frv"/>
+                            <constraint firstAttribute="bottom" secondItem="lTg-RT-b6J" secondAttribute="bottom" id="gLW-cF-frv"/>
                             <constraint firstAttribute="trailing" secondItem="lTg-RT-b6J" secondAttribute="trailing" id="w7k-jJ-jTx"/>
                             <constraint firstItem="lZA-KP-LIq" firstAttribute="top" secondItem="FJw-UQ-mQc" secondAttribute="top" id="wfa-5V-gEa"/>
                             <constraint firstAttribute="bottom" secondItem="lZA-KP-LIq" secondAttribute="bottom" id="z5o-rU-OmL"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cell Bottom Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lI5-MH-Q93" customClass="GRMessagesLabel">
-                        <rect key="frame" x="0.0" y="133" width="320" height="17"/>
+                        <rect key="frame" x="0.0" y="133" width="320" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="17" id="orN-mx-ceY"/>
+                            <constraint firstAttribute="height" constant="21" id="orN-mx-ceY"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -93,6 +93,7 @@
                 <constraint firstItem="lZA-KP-LIq" firstAttribute="leading" secondItem="Kw5-4y-eOi" secondAttribute="trailing" constant="5" id="4kO-LH-796"/>
                 <constraint firstItem="lI5-MH-Q93" firstAttribute="leading" secondItem="b2P-eM-4bo" secondAttribute="leading" id="BGP-DR-o9f"/>
                 <constraint firstItem="lZA-KP-LIq" firstAttribute="top" secondItem="0mX-uY-1sw" secondAttribute="bottom" id="I4q-NC-8XM"/>
+                <constraint firstAttribute="bottom" secondItem="lI5-MH-Q93" secondAttribute="bottom" id="SBo-8W-efk"/>
                 <constraint firstAttribute="trailing" secondItem="HDl-t9-5MQ" secondAttribute="trailing" id="UGb-dN-mQt"/>
                 <constraint firstItem="FJw-UQ-mQc" firstAttribute="width" secondItem="0mX-uY-1sw" secondAttribute="width" id="cRf-VR-ZZE"/>
                 <constraint firstItem="lI5-MH-Q93" firstAttribute="top" secondItem="FJw-UQ-mQc" secondAttribute="bottom" constant="-2" id="d40-8R-fO4"/>
@@ -125,7 +126,7 @@
                 <outlet property="textViewMarginHorizontalSpaceConstraint" destination="w7k-jJ-jTx" id="Hrl-wm-VhS"/>
                 <outlet property="textViewTopVericalSpaceConstraint" destination="YAG-aW-VK3" id="dde-QH-jvF"/>
             </connections>
-            <point key="canvasLocation" x="413" y="535"/>
+            <point key="canvasLocation" x="-72" y="321"/>
         </collectionViewCell>
     </objects>
 </document>
